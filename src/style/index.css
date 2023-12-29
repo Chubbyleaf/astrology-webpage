@@ -281,23 +281,17 @@ body {
     }
 }
 
-@font-face {
-    font-family: 'PingFang-SC';
-    src: url('/src/font/PingFang-SC-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'SongTi-light';
-    src: url('/src/font/songti-tc-light.ttf') format('truetype');
+    src: url('../font/songti-tc-light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SongTi-regular';
-    src: url('/src/font/songti-tc-regular.ttf') format('truetype');
+    src: url('../font//songti-tc-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

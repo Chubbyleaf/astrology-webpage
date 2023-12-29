@@ -46,7 +46,7 @@ const pathText = {
 // 星象图svg
 async function loadAstrologySvg() {
     try {
-        let astrology = await fetch('/src/svg/astrology.svg');
+        let astrology = await fetch('./src/svg/astrology.svg');
         let content = await astrology.text();
         document.querySelector('.astrology-holder').innerHTML = content;
     } catch (error) {
@@ -58,7 +58,7 @@ async function loadAstrologySvg() {
 // 连线图svg
 async function loadConnectionSvg() {
     try {
-        let astrology = await fetch('/src/svg/connection.svg');
+        let astrology = await fetch('./src/svg/connection.svg');
         let content = await astrology.text();
         document.querySelector('.connection-holder').innerHTML = content;
         window.dispatchEvent(new Event('load'));
