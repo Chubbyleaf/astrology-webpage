@@ -1,0 +1,303 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'SongTi-regular';
+    font-weight: bold;
+    min-width: 1300px;
+    line-height: 1.5em;
+}
+
+.bold-path {
+    stroke-width: 2;
+}
+
+/* 横向布局 */
+.horizontal-layout {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}
+
+/* 纵向布局 */
+.vertical-layout {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sides-margin {
+    margin: 0 25px;
+}
+
+
+.cover {
+    min-height: 1300px;
+    width: 100%;
+}
+
+/* 封面部分 */
+#cover-title-img {
+    position: absolute;
+    bottom: 30%;
+    left: 20%;
+    opacity: 0;
+    width: 40%;
+    animation: fadeIn 4s ease-out forwards;
+}
+
+/* 副标题 */
+#cover-subtitle-div {
+    font-size: 35px;
+    color: white;
+    position: absolute;
+    left: 18%;
+    bottom: 18%;
+    opacity: 0;
+    animation: fadeIn 4s ease-out forwards;
+    animation-delay: 4s;
+}
+
+#cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* 引入部分 */
+.intro-outer-wrap {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#intro-wrap {
+    max-width: 620px;
+    opacity: 0;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+
+#intro-wrap.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.intro-text {
+    margin-left: 50px;
+    margin-top: -20px;
+}
+
+/* 点点繁星，你我其名 */
+.headline-wrap {
+    margin-top: 150px;
+    font-size: 30px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#headline-wrap01 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#headline-wrap01.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.headline-wrap .headline-title {
+    margin-left: -90px;
+    margin-top: 75px;
+    max-width: 600px;
+    text-align: center;
+}
+
+
+/* 所有左侧的文字 */
+.left-wrap {
+    margin-top: 100px;
+    padding: 60px;
+}
+
+.left-wrap .left-content {
+    margin-left: 110px;
+    margin-top: -150px;
+}
+
+.left-wrap .left-content .left-title {
+    font-size: 20px;
+    font-weight: bolder !important;
+    background: linear-gradient(to bottom, #408AF8, rgb(255, 255, 255, 37%));
+    background-clip: text;
+    /* 让渐变只出现在文字上面 */
+    color: transparent;
+    /* 隐藏文字的实际颜色，以显示渐变效果 */
+    display: inline-block;
+    /* 使得渐变作用于文字的实际占用区域 */
+}
+
+.left-wrap .left-content .left-text {
+    width: 503px;
+    margin-top: 20px;
+}
+
+/* 连线的解释性文字 */
+#connection-explain-text {
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 200px;
+    font-size: 12px;
+}
+
+.bottom-chart-name {
+    width: 100;
+    text-align: center;
+}
+
+/* 词云图 */
+#WordCloud-Chart {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 200px;
+}
+
+#wordcloud-charts-wrap {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+/* 二十八星宿词云图 */
+#wordcloud-charts-wrap .twenty-eight-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 200px;
+}
+
+#wordcloud-charts-wrap .twenty-eight-intro {
+    width: 600px;
+    margin-bottom: 70px;
+}
+
+#wordcloud-charts-wrap #twenty-eight {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    width: 900px;
+}
+
+.grid-item {
+    width: 120px;
+    height: 70px;
+    background-color: black;
+    /* border:1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row
+}
+
+/* 仰望星空，共托情思 */
+.emotion-wrap {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    margin-top: 100px;
+}
+
+.emotion-wrap .center-icon {
+    margin-left: -60px;
+    margin-bottom: -120px;
+}
+
+.emotion-wrap .center-text {
+    margin-left: 50px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-30%);
+        opacity: 1;
+    }
+}
+
+@keyframes moveMeteor {
+    from {
+        top: 0;
+        left: 100%;
+    }
+
+    to {
+        top: calc(100% - 100%);
+        left: calc(100% - 100%);
+    }
+}
+
+@font-face {
+    font-family: 'PingFang-SC';
+    src: url('/src/font/PingFang-SC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SongTi-light';
+    src: url('/src/font/songti-tc-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SongTi-regular';
+    src: url('/src/font/songti-tc-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
