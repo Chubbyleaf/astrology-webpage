@@ -10,9 +10,6 @@ body {
     line-height: 1.5em;
 }
 
-.bold-path {
-    stroke-width: 2;
-}
 
 /* 横向布局 */
 .horizontal-layout {
@@ -31,10 +28,15 @@ body {
     flex-direction: column;
 }
 
+/* 两侧边距 */
 .sides-margin {
     margin: 0 25px;
 }
 
+/* 每一个大的部分上边距 */
+.part-top-margin {
+    margin-top: 200px;
+}
 
 .cover {
     min-height: 1300px;
@@ -111,11 +113,11 @@ body {
 /* 点点繁星，你我其名 */
 .headline-wrap {
     margin-top: 150px;
-    font-size: 30px;
     width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 
 #headline-wrap01 {
@@ -141,16 +143,19 @@ body {
 }
 
 .headline-wrap .headline-title {
-    margin-left: -90px;
-    margin-top: 75px;
+    font-size: 32px;
+    margin-top: -10px;
     max-width: 600px;
-    text-align: center;
+    margin-bottom: 40px;
+}
+
+.headline-wrap .headline-icon {
+    margin-left: -250px;
 }
 
 
 /* 所有左侧的文字 */
 .left-wrap {
-    margin-top: 100px;
     padding: 60px;
 }
 
@@ -159,8 +164,8 @@ body {
     margin-top: -150px;
 }
 
-.left-wrap .left-content .left-title {
-    font-size: 20px;
+.blue-gradient-text {
+    font-size: 20px !important;
     font-weight: bolder !important;
     background: linear-gradient(to bottom, #408AF8, rgb(255, 255, 255, 37%));
     background-clip: text;
@@ -178,49 +183,80 @@ body {
 
 /* 连线的解释性文字 */
 #connection-explain-text {
-    max-width: 400px;
+    width: 295px;
     margin-top: 20px;
-    margin-left: 200px;
     font-size: 12px;
 }
 
 .bottom-chart-name {
     width: 100;
     text-align: center;
+    margin-top: 20px;
 }
 
-/* 词云图 */
-#WordCloud-Chart {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    margin-top: 200px;
+/* 圆形旋转别名图 */
+#Rolling-Star-Chart {
+    width: 80%;
+    margin:0 10%;
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
 }
 
-#wordcloud-charts-wrap {
-    margin-top: 100px;
-    margin-bottom: 200px;
-    width: 100%;
-    display: flex;
+::-webkit-scrollbar {
+    display: none;
+}
+
+.rolling-item-warp {
+    width: 400px;
+    height: 400px;
+    margin: 0 20px;
+    color: #fff;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* 添加过渡效果 */
+}
 
+.rolling-item {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    animation-play-state: running;
+}
+
+.rolling-item span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* 圆形旋转别名图结束 */
+
+#wordcloud-charts-wrap {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    width: 100%;
+}
+
+/* 居中的文字 */
+.center-text {
+    width: 650px;
+    margin-bottom: 50px;
+}
+
+/* 居中的文字 */
+.headline-wrap .center-text {
+    width: 620px;
 }
 
 /* 二十八星宿词云图 */
-#wordcloud-charts-wrap .twenty-eight-intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 200px;
-}
-
-#wordcloud-charts-wrap .twenty-eight-intro {
-    width: 600px;
-    margin-bottom: 70px;
-}
-
 #wordcloud-charts-wrap #twenty-eight {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -269,6 +305,19 @@ body {
     }
 }
 
+@keyframes divMove {
+    0% {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+
+    }
+
+    100% {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+    }
+}
+
 @keyframes moveMeteor {
     from {
         top: 0;
@@ -278,6 +327,16 @@ body {
     to {
         top: calc(100% - 100%);
         left: calc(100% - 100%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -291,7 +350,7 @@ body {
 
 @font-face {
     font-family: 'SongTi-regular';
-    src: url('../font//songti-tc-regular.ttf') format('truetype');
+    src: url('../font/songti-tc-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
