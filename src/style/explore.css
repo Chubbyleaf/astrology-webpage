@@ -8,6 +8,11 @@
      height: 100%;
      width: 100%;
      background-color: black;
+    
+ }
+
+ #app{
+    font-family: 'SongTi-regular';
  }
 
  .star {
@@ -41,10 +46,10 @@
  /* 标题 */
  .el-header {
      width: 100%;
-     height: 60px !important;
+     height: 100px !important;
      color: white;
      text-align: center;
-     font-size: xx-large;
+     font-size: 60px;
      font-weight: bolder;
      padding-top: 20px;
      padding-bottom: 20px;
@@ -72,7 +77,7 @@
      background-color: transparent;
      text-align: center;
      margin-top: 20px;
-     overflow-y: auto;
+     overflow-y: scroll;
  }
 
  /* 诗词的内容 */
@@ -80,31 +85,24 @@
      margin: 15px;
  }
 
- .sidebar-below-div::-webkit-scrollbar {
-     /*滚动条宽*/
-     width: 4px;
-     height: 90%;
+ /* 诗词的内容 */
+ .poetry-content-info-div {
+     margin: 30px 15px 15px 15px;
+     text-align: left;
  }
 
- .sidebar-below-div::-webkit-scrollbar-thumb {
-     /*正在滑动的小块*/
-     border-radius: 10px;
-     background-color: gray;
+ ::-webkit-scrollbar {
+     display: none;
  }
-
- .sidebar-below-div::-webkit-scrollbar-track {
-     /*滚动内部轨道*/
-     /* box-shadow: inset 0 0 5px rgba(186, 32, 32, 0.2); */
-     background: white;
-     border-radius: 10px;
- }
-
 
  .sidebar-title-div {
      text-align: center;
      padding: 10px;
      height: 30px;
      font-weight: bold;
+     font-size: 20px;
+     margin-top: 10px;
+     position: relative;
  }
 
 
@@ -115,6 +113,23 @@
      transition: transform 2s ease, opacity 2s ease;
      animation: blink 5s infinite;
  }
+
+/* 返回按钮 */
+#back-button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
 
  @keyframes blink {
 
@@ -130,7 +145,9 @@
      }
  }
 
- .el-cascader input.el-input__inner {
-     height: 80px;
-     overflow-y: auto;
- }
+ @font-face {
+    font-family: 'SongTi-regular';
+    src: url('../font/方正清刻本悦宋简体.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

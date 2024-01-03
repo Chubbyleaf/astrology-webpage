@@ -55,15 +55,11 @@ cloud = {
                     .text(function (d) { return d.text; })
 
                     .on("mouseover", function (d) {
-                        // Show tooltip on hover
-                        tooltip.html(`【${d.text}】共出现 ${d.size} 次`)
+                        tooltip.html(`【${d.text}】,属于「${d.originName}」,共出现「${d.size}」次`)
                             .style("visibility", "visible")
-                            // .style("top", (d3.event.clientX - 10) + "px")
-                            // .style("left", (d3.event.clientY + 10) + "px");
-
+                            .style("font-weight","bolder")
                     })
                     .on("mouseout", function () {
-                        // Hide tooltip on mouseout
                         tooltip.style("visibility", "hidden");
                     });
             })

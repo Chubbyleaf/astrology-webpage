@@ -25,6 +25,7 @@ option = {
             nodeAlign: 'justify',
             draggable: false,
             orient: 'vertical',
+            color: ['#8685BF', '#5478D4', '#A5DAE2', '#82C4D2', '#46C3EA', '#7EB6DB', '#5CB1DA', '#53A6DA', '#31A9DD', '#3E90B6', '#045DAD', '#045DAD', '#003E6E', '#143385', '#17216E'],
             label: {
                 position: 'top'
             },
@@ -34,15 +35,15 @@ option = {
             },
             label: {
                 fontFamily: "SongTi-regular",
-                fontSize: 12,
+                fontSize: 8,
                 position: 'inside',
                 color: '#fff',
             },
+            // nodeGap: 30,
             levels: [
                 {
                     depth: 0,
                     itemStyle: {
-                        color: '#fbb4ae'
                     },
                     lineStyle: {
                         color: 'source',
@@ -52,29 +53,23 @@ option = {
                 {
                     depth: 1,
                     itemStyle: {
-                        color: '#b3cde3'
+                        color: '#000',
+                        borderColor:"#fff"
                     },
                     lineStyle: {
                         color: 'target',
-                        opacity: 0.6
+                        opacity: 0.3
                     }
                 },
                 {
                     depth: 2,
                     itemStyle: {
-                        color: '#fff'
+                        color: '#b3cde3'
                     },
                     lineStyle: {
-                        color: 'source',
-                        opacity: 0.6
-                    },
-                    label: {
-                        fontFamily: "SongTi-regular",
-                        fontSize: 12,
-                        position: 'inside',
-                        color: '#000',
-                    },
-                    nodeGap: 50,
+                        color: 'target',
+                        opacity: 0.2
+                    }
                 }
             ],
         }

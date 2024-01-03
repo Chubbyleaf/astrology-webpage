@@ -1,7 +1,38 @@
 // 诗中常见的星象名称
-
 const rollingInfo = [
     {
+        name: "紫微",
+        otherNameStr: "紫微 中宫 紫垣 辰极 耀魄 天枪 枪星 司中 应星 四辅 璇 璇玑 天枢 极枢 枢极 太乙 太一 枢纽 华盖 天璇 天玑 玉衡 开阳 瑶光 台斗 泰斗 天魁 文昌 北斗 北极 北辰 勾陈一 ",
+        radius: 430,
+    }, {
+        name: "太微",
+        otherNameStr: "太微 东垣 掖门 魁三象 郎位 右执法 虎贲 大微 上垣 ",
+        radius: 155,
+    }, {
+        name: "天市",
+        otherNameStr: "天市 天牢 天纪 帝座 帝坐 贯索 ",
+        radius: 125,
+    }, {
+        name: "金星",
+        otherNameStr: "金星 太白 白角 昏星 晨星 启明 长庚 明星 大星 刑星 殷星 大正 营星 观星 宫星 大衰 大泽 终星 大相 天浩 序星 月纬 梁星 灭星 ",
+        radius: 350,
+    }, {
+        name: "木星",
+        otherNameStr: "木星 岁星 太岁 龙集 青龙 苍龙 仓龙 木精 端蒙 纪星 经星 周星 摄提 重华 重星 德星 福星 善星 得岁 ",
+        radius: 320,
+    }, {
+        name: "水星",
+        otherNameStr: "水星 辰星 水精 小白 细爽 细极 勾星 钩星 辰勾 小正 兔星 伺晨 安周 安调 ",
+        radius: 220,
+    }, {
+        name: "火星",
+        otherNameStr: "火星 火房 荧惑 营惑 火精 罚星 法星 执法 法使 ",
+        radius: 150,
+    }, {
+        name: "土星",
+        otherNameStr: "土星 镇星 土精 填星 信星 地候 ",
+        radius: 125,
+    }, {
         name: "角",
         otherNameStr: "角宿 角星 天门 天关 天柱 辰角 苍龙角 角木蛟 龙角 平道 天田 进贤 周鼎 天门 库楼 南门 ",
         radius: 280,
@@ -114,13 +145,29 @@ const rollingInfo = [
         name: "轸",
         otherNameStr: "轸宿 鸟驾 天车 土司空 左辖 青邱 军门 器府 ",
         radius: 150,
-    },
+    }
 ]
 
-//生成28个画星宿的div框
+//生成div框
 function drawRollingDiv() {
     const chartContainer = document.getElementById('Rolling-Star-Chart');
     for (let i = 0; i < rollingInfo.length; i++) {
+        if (i == 0) {
+            const typeNameDiv = document.createElement('div');
+            typeNameDiv.classList.add('rolling-left-type-name');
+            typeNameDiv.innerText = "三垣"
+            chartContainer.appendChild(typeNameDiv)
+        } else if (i == 3) {
+            const typeNameDiv = document.createElement('div');
+            typeNameDiv.classList.add('rolling-left-type-name');
+            typeNameDiv.innerText = "五星"
+            chartContainer.appendChild(typeNameDiv)
+        } else if (i == 8) {
+            const typeNameDiv = document.createElement('div');
+            typeNameDiv.classList.add('rolling-left-type-name');
+            typeNameDiv.innerText = "二十八宿"
+            chartContainer.appendChild(typeNameDiv)
+        }
         const div = document.createElement('div');
         div.classList.add('rolling-item-warp');
         div.setAttribute('id', 'rolling' + i);
@@ -140,39 +187,10 @@ function drawRollingDiv() {
         }
         let centerText = document.createElement("div")
         centerText.innerText = rollingInfo[i].name
-        centerText.classList.add("blue-gradient-text")
+        centerText.classList.add("center-blue-gradient-text")
         innerDiv.appendChild(centerText)
         div.appendChild(innerDiv)
-
     }
 }
 
-
-// function rolling() {
-//     const scrollContainer = document.getElementById('Rolling-Star-Chart');
-//     const rollingItemWarps = document.querySelectorAll('.rolling-item-warp');
-//     let isScrolling = false;
-//     scrollContainer.addEventListener('wheel', (event) => {
-//         if (!isScrolling) {
-//             isScrolling = true;
-//             const scrollAmount = event.deltaY;
-//             scrollContainer.scrollLeft += scrollAmount * 5; // Adjust the multiplier as needed
-//             rollingItemWarps.forEach((item) => {
-//                 item.style.transition = 'transform 4s'; // Smooth transition over 1 second
-//                 item.style.transform = `rotate(${-720}deg)`;
-//             });
-
-//             setTimeout(() => {
-//                 rollingItemWarps.forEach((item) => {
-//                     item.style.transition = 'none'; 
-//                     item.style.transform = 'rotate(0deg)';
-//                 });
-//                 isScrolling = false;
-//             }, 1000); // Wait for 1 second (matching transition duration)
-//         }
-//     });
-// }
-
-
 drawRollingDiv();
-rolling();
