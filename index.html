@@ -20,258 +20,283 @@
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()"/>
+    <div id="menu-text"></div>
+  </nav>
 
-  <div class="cover">
-    <img id="cover-title-img" src="./src/svg/title.svg" alt="title" />
-    <div id="cover-subtitle-div">解读唐诗中的星象密码</div>
-    <img id="cover-bg" src="./src/svg/background.svg" alt="background" style="width: 100%" />
+  <div id="left-menu" class="hide-menu">
+    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()"/>
+    <a href="#chapter01" class="page-scroll" id="menu01">第一章<br/>繁星点点，你我其名</a>
+    <a href="#chapter02" class="page-scroll" id="menu02">第二章<br/>仰望星空，共托情思</a>
+    <a href="#chapter03" class="page-scroll" id="menu03">第三章<br/>以人为镜，诗星闪烁</a>
+    <a href="#explore-sec" class="page-scroll" id="menu04">第四章<br/>星空探索</a>
+
   </div>
-
-  <div class="headline-wrap">
-    <img style="margin-left: -50px;" src="./src/image/blue-star.png" alt="blue-star" />
-    <div class="headline-title">引言</div>
-    <div class="center-text">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国传统星象有不少于六千年的发展和演变历史。几千年来，人们对于天体的向往和探索从未停止。 <br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;古人的天具有更多人文色彩，星辰不仅仅是星辰，它们的形态、运行等等都与人事密不可分，人们对星辰有神秘的预测，也有审美的欣赏追求。古代社会的星象文化反映自然的同时更多的反映了人文思想，由表及里地影响了文人的文学创作。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经过前期星象文化充足丰沛的发展，到了唐代，已经具备了一套完整的星象谱系和传播量广泛的星宿知识，社会大气候已经形成。封建社会发展顶端的一个大时代里，政治、经济、文化各方面繁荣的大唐王朝，星象文化由表及里地渗入到了唐诗创作中，创造了文学进程中的一方独特审美区域，久负盛名的“唐诗气象”看做是星象文化的一种弥散也无不可。我们想以唐诗为镜，一窥古人仰望的灿烂星空，体会古人通过星星寄托的情思感触。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以全唐诗大数据集为样本,我们深入挖掘和分析了唐代289年间蕴含璀璨星象的优美诗篇，处理并归纳了超过48000首的杰出作品，近三千位诗人的创作轨迹，构建起多维交叉的词人-作品-意象-情感星象图谱。我们发现，在流传千古的美妙诗句背后，往往透过层层星空月色的意境描绘，抒发了诗人们丰富细腻的情感世界,展现了他们对这大千世界变幻无常的深邃体悟。
+  <header>
+    <div class="cover">
+      <img id="cover-title-img" src="./src/svg/title.svg" alt="title" />
+      <div id="cover-subtitle-div">解读唐诗中的星象密码</div>
+      <img id="cover-bg" src="./src/svg/background.svg" alt="background" style="width: 100%" />
+      <a id="down-wrap" href="#chapter01" class="page-scroll">
+        <img id="down-arrow" src="./src/image/down-arrow.png" alt="down-arrow" />
+        <div id="down-text">进入探索</div>
+      </a>
     </div>
-  </div>
+  </header>
 
-  <div class="headline-wrap" id="headline-wrap01">
-    <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
-    <div class="headline-title">繁星点点，你我其名</div>
-    <div class="center-text">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;渺渺夜空，天上的繁星数以亿万记，而能够被古人发现、观察并记住的星星，仅是其中微不可计的一部分。古人用有限的技术与无限的想象，将绚烂的星空记于笔下，描绘出韵味无穷的诗篇。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们从4万多首诗中，以星辰的名字为关键字，筛选出描写星象的2385首诗，进行探索与分析，体会。<br />
+  <section id="chapter01">
+    <div class="headline-wrap">
+      <img style="margin-left: -50px;" src="./src/image/blue-star.png" alt="blue-star" />
+      <div class="headline-title">引言</div>
+      <div class="center-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国传统星象有不少于六千年的发展和演变历史。几千年来，人们对于天体的向往和探索从未停止。 <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;古人的天具有更多人文色彩，星辰不仅仅是星辰，它们的形态、运行等等都与人事密不可分，人们对星辰有神秘的预测，也有审美的欣赏追求。古代社会的星象文化反映自然的同时更多的反映了人文思想，由表及里地影响了文人的文学创作。<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;经过前期星象文化充足丰沛的发展，到了唐代，已经具备了一套完整的星象谱系和传播量广泛的星宿知识，社会大气候已经形成。封建社会发展顶端的一个大时代里，政治、经济、文化各方面繁荣的大唐王朝，星象文化由表及里地渗入到了唐诗创作中，创造了文学进程中的一方独特审美区域，久负盛名的“唐诗气象”看做是星象文化的一种弥散也无不可。我们想以唐诗为镜，一窥古人仰望的灿烂星空，体会古人通过星星寄托的情思感触。<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以全唐诗大数据集为样本,我们深入挖掘和分析了唐代289年间蕴含璀璨星象的优美诗篇，处理并归纳了超过48000首的杰出作品，近三千位诗人的创作轨迹，构建起多维交叉的词人-作品-意象-情感星象图谱。我们发现，在流传千古的美妙诗句背后，往往透过层层星空月色的意境描绘，抒发了诗人们丰富细腻的情感世界,展现了他们对这大千世界变幻无常的深邃体悟。
+      </div>
     </div>
-  </div>
-  <div style="width: 100%; display: flex; flex-direction: row;">
-    <!-- 左侧标题和内容介绍 -->
-    <div style="display: flex; flex-direction: column;">
-      <div class="left-wrap">
-        <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-        <div class="left-content">
-          <div class="blue-gradient-text">古人眼中的星空</div>
-          <div class="left-text">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早在先秦时代，中国古人已经有朦胧的天体意识，经过发展演变，形成了一套完整的天体系统。三垣、四象、五星、二十八星宿是古代最主流的星象学说派别。<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;古人将不同星象和多样的维度交叉关联，创造出不同的学说和传说，指导生产、生活和文化：
+
+    <div class="headline-wrap" id="headline-wrap01">
+      <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
+      <div class="headline-title">繁星点点，你我其名</div>
+      <div class="center-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;渺渺夜空，天上的繁星数以亿万记，而能够被古人发现、观察并记住的星星，仅是其中微不可计的一部分。古人用有限的技术与无限的想象，将绚烂的星空记于笔下，描绘出韵味无穷的诗篇。<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们从4万多首诗中，以星辰的名字为关键字，筛选出描写星象的2385首诗，进行探索与分析，体会。<br />
+      </div>
+    </div>
+    <div style="width: 100%; display: flex; flex-direction: row;">
+      <!-- 左侧标题和内容介绍 -->
+      <div style="display: flex; flex-direction: column;">
+        <div class="left-wrap">
+          <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+          <div class="left-content">
+            <div class="blue-gradient-text">古人眼中的星空</div>
+            <div class="left-text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早在先秦时代，中国古人已经有朦胧的天体意识，经过发展演变，形成了一套完整的天体系统。三垣、四象、五星、二十八星宿是古代最主流的星象学说派别。<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;古人将不同星象和多样的维度交叉关联，创造出不同的学说和传说，指导生产、生活和文化：
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="horizontal-layout" style="font-size: 8px;">
-        <div class="vertical-layout sides-margin">
-          <div>天球赤道</div>
-          <img class="headline-icon" src="./src/image/chidao.png" alt="icon" />
+        <div class="horizontal-layout" style="font-size: 8px;">
+          <div class="vertical-layout sides-margin">
+            <div>天球赤道</div>
+            <img class="headline-icon" src="./src/image/chidao.png" alt="icon" />
+          </div>
+          <div class="vertical-layout sides-margin">
+            <div>黄道</div>
+            <img class="headline-icon" src="./src/image/huangdao.png" alt="icon" />
+          </div>
+          <div class="vertical-layout sides-margin">
+            <div>二十八星区</div>
+            <img class="headline-icon" src="./src/image/xingqu.png" alt="icon" />
+          </div>
+          <div class="vertical-layout sides-margin">
+            <div>太阳系</div>
+            <img class="headline-icon" src="./src/image/taiyangxi.png" alt="icon" />
+          </div>
         </div>
-        <div class="vertical-layout sides-margin">
-          <div>黄道</div>
-          <img class="headline-icon" src="./src/image/huangdao.png" alt="icon" />
-        </div>
-        <div class="vertical-layout sides-margin">
-          <div>二十八星区</div>
-          <img class="headline-icon" src="./src/image/xingqu.png" alt="icon" />
-        </div>
-        <div class="vertical-layout sides-margin">
-          <div>太阳系</div>
-          <img class="headline-icon" src="./src/image/taiyangxi.png" alt="icon" />
+        <div class="connection-holder vertical-layout" style="margin-top: 25px;"></div>
+        <div class="horizontal-layout">
+          <div id='connection-explain-text'></div>
         </div>
       </div>
-      <div class="connection-holder vertical-layout" style="margin-top: 25px;"></div>
-      <div class="horizontal-layout">
-        <div id='connection-explain-text'></div>
+      <div class="astrology-holder" style="margin-top: 200px;"></div>
+    </div>
+    </div>
+
+    <div class="left-wrap">
+      <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+      <div class="left-content">
+        <div class="blue-gradient-text">诗中常见的星象名称</div>
+        <div class="left-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在传统文学和生活中，古代人类为星宿创造了多样的别名。他们有的根据本名改编异化而来，有的通过比喻借代，将原先的存在的事物移植到天上，有的根据星星的寓意吉凶赋予了星占学的意义，有的根据传统神话与民族故事加以命名......
+          多样的名称用于唐诗文学中，带来别样的韵律，并丰富了文化内涵。
+        </div>
       </div>
     </div>
-    <div class="astrology-holder" style="margin-top: 200px;"></div>
-  </div>
-  </div>
+    <div style=" display: flex;flex-direction: row;" id="Rolling-Star-Chart"></div>
+    <div style="margin-left:175px">图 各星宿别名统计</div>
 
-  <div class="left-wrap">
-    <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-    <div class="left-content">
-      <div class="blue-gradient-text">诗中常见的星象名称</div>
-      <div class="left-text">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在传统文学和生活中，古代人类为星宿创造了多样的别名。他们有的根据本名改编异化而来，有的通过比喻借代，将原先的存在的事物移植到天上，有的根据星星的寓意吉凶赋予了星占学的意义，有的根据传统神话与民族故事加以命名......
-        多样的名称用于唐诗文学中，带来别样的韵律，并丰富了文化内涵。
+
+    <div class="vertical-layout part-top-margin">
+      <div class="center-text">
+        从唐诗数据中看，诗人婉转含蓄，用各式优美的别名，描绘灿烂星空和星空下的人与事物。
       </div>
     </div>
-  </div>
-  <div style=" display: flex;flex-direction: row;" id="Rolling-Star-Chart"></div>
-  <div style="margin-left:175px">图 各星宿别名统计</div>
+    <div id="WordCloud-Chart" class="vertical-layout"></div>
+    <div class="bottom-chart-name">图 全唐诗常见星象别名词频统计结果（全样本）</div>
 
-
-  <div class="vertical-layout part-top-margin">
-    <div class="center-text">
-      从唐诗数据中看，诗人婉转含蓄，用各式优美的别名，描绘灿烂星空和星空下的人与事物。
-    </div>
-  </div>
-  <div id="WordCloud-Chart" class="vertical-layout"></div>
-  <div class="bottom-chart-name">图 全唐诗常见星象别名词频统计结果（全样本）</div>
-
-  <div id="wordcloud-charts-wrap" class="vertical-layout part-top-margin">
-    <div class="center-text">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将散乱的词云梳理成诗词星空，可以看见几颗星星特别明亮。其中，有的与皇权紧密相连（紫微、太白），有的赞美美好爱情（牛，女），有的与卜验吉凶的玄学相关（岁星），等等。
-    </div>
-    <div>
-      <div id="three-boxes"></div>
-      <div id="five-boxes"></div>
-      <div id="twenty-eight-boxes"></div>
-      <div class="bottom-chart-name">图 全唐诗常见星象别名词频统计结果（按星象）</div>
-      <div id="tree"></div>
-      <div id="five"></div>
-    </div>
-  </div>
-
-  <div class="headline-wrap">
-    <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
-    <div class="headline-title">仰望星空，共托情思</div>
-    <div class="center-text">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为意象入诗，表达情感是自然界事物被赋予的常见文学用法。作为遥不可及的“天外之物”，星辰有着属于自己的独特意象。由于前朝星象文化知识的累积丰厚，星象典故形成一个庞大的体系，它为唐诗创作提供了大量素材。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们对每首诗进行了多重维度分析，通过分类与统计，探索星象意象在唐诗中的情感表达。<br />
-    </div>
-  </div>
-
-  <div class="left-wrap">
-    <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-    <div class="left-content">
-      <div class="blue-gradient-text">星象意象在唐诗中的运用</div>
-      <div class="left-text">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐诗在对星象有多重方面的运用。从出现在唐诗中的途径来看，除去常见的以自身意象作为元素出现，星星常因其本身的特点，如明亮，恒久，冷清等，为诗人在感怀和以物喻事中加以体现。还有专门以星为主题，以咏星来抒发志向，以及以星为代语，用星星的名称代指他物。
+    <div id="wordcloud-charts-wrap" class="vertical-layout part-top-margin">
+      <div class="center-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将散乱的词云梳理成诗词星空，可以看见几颗星星特别明亮。其中，有的与皇权紧密相连（紫微、太白），有的赞美美好爱情（牛，女），有的与卜验吉凶的玄学相关（岁星），等等。
+      </div>
+      <div>
+        <div id="three-boxes"></div>
+        <div id="five-boxes"></div>
+        <div id="twenty-eight-boxes"></div>
+        <div class="bottom-chart-name">图 全唐诗常见星象别名词频统计结果（按星象）</div>
+        <div id="tree"></div>
+        <div id="five"></div>
       </div>
     </div>
-  </div>
-  <div class="horizontal-layout" id="method-chart-warp"
-    style="width: 100%;position:relative;height: 600px;margin-top: -50px;">
-    <div id="Center-Pie-Chart"></div>
-    <div id="Side-Pie-Chart" style="height: 167px;width: 167px;"></div>
-    <div id="pie-pie-line"></div>
-  </div>
-  <div class="bottom-chart-name">图 星象与入诗手法</div>
-
-
-  <div class="left-wrap" style="margin-top: 100px;">
-    <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-    <div class="left-content">
-      <div class="left-text">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人常将星辰用于哲理感怀之中，也歌咏星辰抒发志向，或是借有关星辰的神话传说，咏史咏志。不同的星辰在不同的题材有所偏重，比如牛郎织女常用于爱情闺怨方面的诗词，紫微，北斗等常用于歌颂皇权或抒发政治方面的情感。
+  </section>
+  <section id="chapter02">
+    <div class="headline-wrap">
+      <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
+      <div class="headline-title">仰望星空，共托情思</div>
+      <div class="center-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为意象入诗，表达情感是自然界事物被赋予的常见文学用法。作为遥不可及的“天外之物”，星辰有着属于自己的独特意象。由于前朝星象文化知识的累积丰厚，星象典故形成一个庞大的体系，它为唐诗创作提供了大量素材。<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们对每首诗进行了多重维度分析，通过分类与统计，探索星象意象在唐诗中的情感表达。<br />
       </div>
     </div>
-  </div>
-  <div class="horizontal-layout" style="margin-top: -70px;">
-    <div id="Rose-Chart" style="height: 400px;width: 400px;margin-left: 100px;"></div>
-    <div id="Radar-Chart" style="height: 600px;width: 800px;"></div>
-  </div>
 
-  <div class="left-wrap">
-    <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-    <div class="left-content">
-      <div class="blue-gradient-text">星象，情感与诗人</div>
-      <div class="left-text">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“以我观物，故物皆著我之色彩”。透过星象中的诗词，折射出的是诗人的万千情感世界。 <br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人们在选择星象入诗时，还具有相当强烈的主观性，即内在动机，因为同写星象文化，风格各异，特征显明。不同的喜好观，不同的人格气质，塑造了不同的诗风。
+    <div class="left-wrap">
+      <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+      <div class="left-content">
+        <div class="blue-gradient-text">星象意象在唐诗中的运用</div>
+        <div class="left-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唐诗在对星象有多重方面的运用。从出现在唐诗中的途径来看，除去常见的以自身意象作为元素出现，星星常因其本身的特点，如明亮，恒久，冷清等，为诗人在感怀和以物喻事中加以体现。还有专门以星为主题，以咏星来抒发志向，以及以星为代语，用星星的名称代指他物。
+        </div>
       </div>
     </div>
-  </div>
-
-  <div id='Sankey-Chart' style="height: 550px; width:1400px;margin-left:120px;margin-top: -50px;"></div>
-  <div class="bottom-chart-name">著名诗人常用意象及其表达情绪统计</div>
-
-  <div id="trigger01"></div>
-  <div class="headline-wrap" id="animation-div">
-    <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
-    <div class="headline-title">以人为镜，诗星闪烁</div>
-    <div class="center-text">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星象在诗中的运用存在规律，又蕴藏着唯一性。而每首诗作为一个独立的个体，在璀璨的诗词星空中闪烁着属于自己独特的光芒，也为星空的绚烂添加光彩。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们为诗歌的维度添加了图形化表达，构建了可探索星空作为星象诗数据集的可视化表现。通过筛选，聚类与分析，或许可以继续发现星象在唐诗中不为人知的内在规律。
+    <div class="horizontal-layout" id="method-chart-warp"
+      style="width: 100%;position:relative;height: 600px;margin-top: -50px;">
+      <div id="Center-Pie-Chart"></div>
+      <div id="Side-Pie-Chart" style="height: 167px;width: 167px;"></div>
+      <div id="pie-pie-line"></div>
     </div>
-  </div>
+    <div class="bottom-chart-name">图 星象与入诗手法</div>
 
 
-  <div class="left-wrap">
-    <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
-    <div class="left-content">
-      <div class="blue-gradient-text">诗人描绘的万千诗词星空</div>
-      <div class="left-text">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人对不同星象的偏好，直接反映了他们的性格、志向和情思。这样的偏好好似窥探他们内心的一扇窗户，透露出他们独特的情感体验，社会经历和生活态度。对特定星象的钟情不仅仅是感情的抒发，更是对人生深刻思考的体现。因此，透过对星光的选择，我们能够直观地感受到诗人的鲜明个性以及对生活探寻的经历和态度。一首首诗词化作星空中的星星，为我们带来别样的体悟。<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们选取四个代表性诗人的一首代表性诗词，并对其进行可视化编码，分别看看星象在其中的运用。
+    <div class="left-wrap" style="margin-top: 100px;">
+      <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+      <div class="left-content">
+        <div class="left-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人常将星辰用于哲理感怀之中，也歌咏星辰抒发志向，或是借有关星辰的神话传说，咏史咏志。不同的星辰在不同的题材有所偏重，比如牛郎织女常用于爱情闺怨方面的诗词，紫微，北斗等常用于歌颂皇权或抒发政治方面的情感。
+        </div>
       </div>
     </div>
-  </div>
-  <div class="vertical-layout">
-    <img id="star-illustration" src="./src/svg/illustration.svg" alt="illustration" />
-  </div>
+    <div class="horizontal-layout" style="margin-top: -70px;">
+      <div id="Rose-Chart" style="height: 400px;width: 400px;margin-left: 100px;"></div>
+      <div id="Radar-Chart" style="height: 600px;width: 800px;"></div>
+    </div>
 
-  <div id="poem-overall-wrap" class="vertical-layout part-top-margin">
-    <div class="one-poem-wrap" id="poem01">
-      <div class="title">杨炯·灵台诗人</div>
-      <div class="intro">杨炯对形象具有身后的造诣，接近当时的官方潮流。</div>
-      <div class="poem">
-        《和骞右丞省中暮望》<br />
-        故事閒台阁，仙门蔼已深。<br />
-        旧章窥复道，云幌肃重阴。<br />
-        玄律葭灰变，青阳斗柄临。<br />
-        年光摇树色，春气绕兰心。<br />
-        风响高窗度，流痕曲岸侵。<br />
-        <span>天门</span>总枢辖，人镜辨衣簪。<br />
-        日暮南宫静，瑶华振雅音。
+    <div class="left-wrap">
+      <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+      <div class="left-content">
+        <div class="blue-gradient-text">星象，情感与诗人</div>
+        <div class="left-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“以我观物，故物皆著我之色彩”。透过星象中的诗词，折射出的是诗人的万千情感世界。 <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人们在选择星象入诗时，还具有相当强烈的主观性，即内在动机，因为同写星象文化，风格各异，特征显明。不同的喜好观，不同的人格气质，塑造了不同的诗风。
+        </div>
       </div>
     </div>
-    <div class="one-poem-wrap" id="poem02">
-      <div class="title">李白·太白星精</div>
-      <div class="intro">李白对星象的运用，成为其浪漫诗风气质的重要组成部分。</div>
-      <div class="poem">
-        《拟古十二首 其六》<br />
-        运速天地闭，胡风结飞霜。<br />
-        百草死冬月，六龙颓西荒。<br />
-        <span>太白</span>出东方，<span>彗星</span>扬精光。<br />
-        鸳鸯非越鸟，何为眷南翔。<br />
-        惟昔鹰将犬，今为侯与王。<br />
-        得水成蛟龙，争池夺凤凰。<br />
-        <span>北斗</span>不酌酒，<span>南箕</span>空簸扬。
+
+    <div id='Sankey-Chart' style="height: 550px; width:1200px;margin-left:120px;margin-top: -50px;"></div>
+    <div class="bottom-chart-name">著名诗人常用意象及其表达情绪统计</div>
+  </section>
+  <section id="chapter03">
+    <div id="trigger01"></div>
+    <div class="headline-wrap" id="animation-div">
+      <img class="headline-icon" src="./src/image/blue-star.png" alt="blue-star" />
+      <div class="headline-title">以人为镜，诗星闪烁</div>
+      <div class="center-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星象在诗中的运用存在规律，又蕴藏着唯一性。而每首诗作为一个独立的个体，在璀璨的诗词星空中闪烁着属于自己独特的光芒，也为星空的绚烂添加光彩。<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们为诗歌的维度添加了图形化表达，构建了可探索星空作为星象诗数据集的可视化表现。通过筛选，聚类与分析，或许可以继续发现星象在唐诗中不为人知的内在规律。
       </div>
     </div>
-    <div class="one-poem-wrap" id="poem03">
-      <div class="title">杜甫·北斗情怀</div>
-      <div class="intro">杜甫对北斗的爱，是对君主，对国家深沉的爱。</div>
-      <div class="poem">
-        《夏日杨长宁宅送崔侍御、常正字入京》<br />
-        醉酒扬雄宅，升堂子贱琴。<br />
-        不堪垂老鬓，还对欲分襟。<br />
-        天地西江远，星辰<span>北斗</span>深。<br />
-        乌台俯麟阁，长夏白头吟。
+
+
+    <div class="left-wrap">
+      <img class="left-icon" src="./src/image/blue-star2.png" alt="blue-star" />
+      <div class="left-content">
+        <div class="blue-gradient-text">诗人描绘的万千诗词星空</div>
+        <div class="left-text">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诗人对不同星象的偏好，直接反映了他们的性格、志向和情思。这样的偏好好似窥探他们内心的一扇窗户，透露出他们独特的情感体验，社会经历和生活态度。对特定星象的钟情不仅仅是感情的抒发，更是对人生深刻思考的体现。因此，透过对星光的选择，我们能够直观地感受到诗人的鲜明个性以及对生活探寻的经历和态度。一首首诗词化作星空中的星星，为我们带来别样的体悟。<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们选取四个代表性诗人的一首代表性诗词，并对其进行可视化编码，分别看看星象在其中的运用。
+        </div>
       </div>
     </div>
-    <div class="one-poem-wrap" id="poem04">
-      <div class="title">白居易·紫微映照</div>
-      <div class="intro">紫微的频繁运用，体现了白居易的士大夫情怀，映射其政治理想。</div>
-      <div class="poem">
-        《送令狐相公赴太原》 <br />
-        六纛双旌万铁衣，并汾旧路满光辉。。<br />
-        青衫书记何年去，红旆将军昨日归。<br />
-        诗作马蹄随笔走，猎酣鹰翅伴觥飞。<br />
-        北都莫作多时计，再为苍生入<span>紫微</span>。
+    <div class="vertical-layout">
+      <img id="star-illustration" src="./src/svg/illustration.svg" alt="illustration" />
+    </div>
+
+    <div id="poem-overall-wrap" class="vertical-layout part-top-margin">
+      <div class="one-poem-wrap" id="poem01">
+        <div class="title">杨炯·灵台诗人</div>
+        <div class="intro">杨炯对形象具有身后的造诣，接近当时的官方潮流。</div>
+        <div class="poem">
+          《和骞右丞省中暮望》<br />
+          故事閒台阁，仙门蔼已深。<br />
+          旧章窥复道，云幌肃重阴。<br />
+          玄律葭灰变，青阳斗柄临。<br />
+          年光摇树色，春气绕兰心。<br />
+          风响高窗度，流痕曲岸侵。<br />
+          <span>天门</span>总枢辖，人镜辨衣簪。<br />
+          日暮南宫静，瑶华振雅音。
+        </div>
+      </div>
+      <div class="one-poem-wrap" id="poem02">
+        <div class="title">李白·太白星精</div>
+        <div class="intro">李白对星象的运用，成为其浪漫诗风气质的重要组成部分。</div>
+        <div class="poem">
+          《拟古十二首 其六》<br />
+          运速天地闭，胡风结飞霜。<br />
+          百草死冬月，六龙颓西荒。<br />
+          <span>太白</span>出东方，<span>彗星</span>扬精光。<br />
+          鸳鸯非越鸟，何为眷南翔。<br />
+          惟昔鹰将犬，今为侯与王。<br />
+          得水成蛟龙，争池夺凤凰。<br />
+          <span>北斗</span>不酌酒，<span>南箕</span>空簸扬。
+        </div>
+      </div>
+      <div class="one-poem-wrap" id="poem03">
+        <div class="title">杜甫·北斗情怀</div>
+        <div class="intro">杜甫对北斗的爱，是对君主，对国家深沉的爱。</div>
+        <div class="poem">
+          《夏日杨长宁宅送崔侍御、常正字入京》<br />
+          醉酒扬雄宅，升堂子贱琴。<br />
+          不堪垂老鬓，还对欲分襟。<br />
+          天地西江远，星辰<span>北斗</span>深。<br />
+          乌台俯麟阁，长夏白头吟。
+        </div>
+      </div>
+      <div class="one-poem-wrap" id="poem04">
+        <div class="title">白居易·紫微映照</div>
+        <div class="intro">紫微的频繁运用，体现了白居易的士大夫情怀，映射其政治理想。</div>
+        <div class="poem">
+          《送令狐相公赴太原》 <br />
+          六纛双旌万铁衣，并汾旧路满光辉。。<br />
+          青衫书记何年去，红旆将军昨日归。<br />
+          诗作马蹄随笔走，猎酣鹰翅伴觥飞。<br />
+          北都莫作多时计，再为苍生入<span>紫微</span>。
+        </div>
+      </div>
+      <img id="custom-stars01" src="./src/svg/custom-stars/cstar1.svg" alt="custom-stars" />
+      <img id="custom-stars02" src="./src/svg/custom-stars/cstar2.svg" alt="custom-stars" />
+      <img id="custom-stars03" src="./src/svg/custom-stars/cstar3.svg" alt="custom-stars" />
+      <img id="custom-stars04" src="./src/svg/custom-stars/cstar4.svg" alt="custom-stars" />
+    </div>
+  </section>
+  <section id="explore-sec">
+    <!-- 探索 -->
+    <div class="vertical-layout" id="explore-warp">
+      <div class="center-text" style="z-index: 2;">
+        我们对2385首诗歌均进行了星星的绘制，组成了唐代诗词星空。让我们点击星空或者左边的面板，进行自由探索。
+      </div>
+      <div style="margin-top: 50px;">
+        <a href="explore.html" class="animated-button">开始探索星空</a>
       </div>
     </div>
-    <img id="custom-stars01" src="./src/svg/custom-stars/cstar1.svg" alt="custom-stars" />
-    <img id="custom-stars02" src="./src/svg/custom-stars/cstar2.svg" alt="custom-stars" />
-    <img id="custom-stars03" src="./src/svg/custom-stars/cstar3.svg" alt="custom-stars" />
-    <img id="custom-stars04" src="./src/svg/custom-stars/cstar4.svg" alt="custom-stars" />
-  </div>
-
-  <!-- 探索 -->
-  <div class="vertical-layout" id="explore-warp">
-    <div class="center-text" style="z-index: 2;">
-      我们对2385首诗歌均进行了星星的绘制，组成了唐代诗词星空。让我们点击星空或者左边的面板，进行自由探索。
-    </div>
-    <div style="margin-top: 50px;">
-      <a href="explore.html" class="animated-button">开始探索星空</a>
-    </div>
-  </div>
-  <img src="./src/image/tail-bg.png" alt="tail-bg" id="tail-bg"/>
+    <img src="./src/image/tail-bg.png" alt="tail-bg" id="tail-bg" />
+  </section>
 
 
-
+  <script src="./src/script/main.js"></script>
+  <script src="src/lib/jquery.easing.min.js"></script>
   <script src="./src/script/ScrollMagic.js"></script>
   <script src="./src/script/RollingText.js"></script>
   <script src="./src/script/Astrology.js"></script>
