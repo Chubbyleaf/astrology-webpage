@@ -1,7 +1,7 @@
 
 // 绘制词云图
-import keywordNumber from "/src/data/keyword.js";
-import xiuOtherNames from '/src/data/otherNames.js'
+import keywordNumber from "../data/keyword.js";
+import xiuOtherNames from '../data/otherNames.js'
 
 //生成三员的div框
 function drawYuanDiv() {

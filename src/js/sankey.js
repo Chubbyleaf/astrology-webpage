@@ -1,4 +1,4 @@
-import sankeyData from '/src/data/sankeyData.js';
+import sankeyData from '../data/sankeyData.js';
 var dom = document.getElementById('Sankey-Chart');
 var myChart = echarts.init(dom, null, {
     renderer: 'svg',

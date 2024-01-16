@@ -1,4 +1,4 @@
-import poetryArray from "/src/data/data.js";
+import poetryArray from "../data/data.js";
 
 var poetry = {
     title: "选择星星后查看",
