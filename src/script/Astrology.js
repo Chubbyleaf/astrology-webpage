@@ -110,7 +110,23 @@ function changeOpacityById(ids, opacity) {
     });
 }
 
-
+//右边的图展示星星
+function showStar(name) {
+    if (name == 'three-yuan-btn') {
+        loadAstrologySvg('./src/svg/ThreeYuan.svg');
+        console.log("点击三垣")
+    } else if (name == 'four-xiang-btn') {
+        loadAstrologySvg('./src/svg/FourXiang.svg');
+        console.log("点击四象")
+    } else if (name == 'five-star-btn') {
+        loadAstrologySvg('./src/svg/FiveStar.svg');
+        lightStars = document.querySelectorAll(".five-star");
+        console.log("点击五星")
+    } else if (name == 'twenty-eight-xiu-btn') {
+        loadAstrologySvg('./src/svg/TwentyEightXiu.svg');
+        console.log("点击二十八宿")
+    }
+}
 
 
 //获取左边一个按钮的连线
@@ -143,6 +159,7 @@ function getPathText(connectionName) {
 
 var tmpLeftBtn = '';//当前选择的左边的按钮
 var tmpRightBtn = '';//当前选择的右边的按钮
+var clickNum = 0;//点击次数，解决会重复执行两次的问题
 
 window.addEventListener('load', function () {
     const threeyuanbtn = document.querySelector(".three-yuan-btn");//三远按钮
@@ -208,40 +225,60 @@ window.addEventListener('load', function () {
         });
 
         // 点击效果
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (event) {
+            event.stopPropagation();
+            event.preventDefault()
             const firstClassName = button.classList.item(0);
-            tmpLeftBtn = firstClassName
-            if (tmpRightBtn != '') {
-                // 清空文本内容，右边按钮
-                document.querySelector(`.${tmpRightBtn} rect`).setAttribute('fill', '#000');
-                tmpRightBtn = ''
-                document.getElementById('connection-explain-text').innerHTML = ''
-                connectionExplainText.style.opacity = 0;
+            if (tmpLeftBtn === firstClassName && clickNum % 2 == 0 && tmpRightBtn == '') {
+                buttons.forEach(otherButton => {
+                    otherButton.style.opacity = 1;
+                });
+                connections.forEach(otherButton => {
+                    otherButton.style.opacity = 1;
+                });
+                clickNum = -1
+                tmpLeftBtn = ''
+                console.log(clickNum, "第一次")
+                console.log(tmpRightBtn, "第一次")
+            } else if(clickNum === -1){
+                clickNum = 0
             }
-            lightClassList = []
-            lightIdList = []
-            buttons.forEach(otherButton => {
-                otherButton.style.opacity = 0.3;
-            });
-            connections.forEach(connection => {
-                connection.style.opacity = 0.3;
-            });
-            if (firstClassName == 'three-yuan-btn') {
-                lightClassList = ["three-yuan-btn", "direction-btn", "season-btn", "meaning-btn"]
-                lightIdList = getPathForOneButton(firstClassName);
-            } else if (firstClassName == 'four-xiang-btn') {
-                lightClassList = ["four-xiang-btn", "direction-btn", "attribute-btn", "animal-btn", "season-btn", "meaning-btn"]
-                lightIdList = getPathForOneButton(firstClassName);
-            } else if (firstClassName == "five-star-btn") {
-                lightClassList = ["five-star-btn", "attribute-btn", "meaning-btn"]
-                lightIdList = getPathForOneButton(firstClassName);
-            } else if (firstClassName == "twenty-eight-xiu-btn") {
-                lightClassList = ["twenty-eight-xiu-btn", "direction-btn", "attribute-btn", "animal-btn", "season-btn", "meaning-btn"]
-                lightIdList = getPathForOneButton(firstClassName);
+            else {
+                clickNum += 1
+                tmpLeftBtn = firstClassName
+                if (tmpRightBtn != '') {
+                    // 清空文本内容，右边按钮
+                    document.querySelector(`.${tmpRightBtn} rect`).setAttribute('fill', '#000');
+                    tmpRightBtn = ''
+                    document.getElementById('connection-explain-text').innerHTML = ''
+                }
+                lightClassList = []
+                lightIdList = []
+                buttons.forEach(otherButton => {
+                    otherButton.style.opacity = 0.3;
+                });
+                connections.forEach(connection => {
+                    connection.style.opacity = 0.3;
+                });
+                if (firstClassName == 'three-yuan-btn') {
+                    lightClassList = ["three-yuan-btn", "direction-btn", "season-btn", "meaning-btn"]
+                    lightIdList = getPathForOneButton(firstClassName);
+                } else if (firstClassName == 'four-xiang-btn') {
+                    lightClassList = ["four-xiang-btn", "direction-btn", "attribute-btn", "animal-btn", "season-btn", "meaning-btn"]
+                    lightIdList = getPathForOneButton(firstClassName);
+                } else if (firstClassName == "five-star-btn") {
+                    lightClassList = ["five-star-btn", "attribute-btn", "meaning-btn"]
+                    lightIdList = getPathForOneButton(firstClassName);
+                } else if (firstClassName == "twenty-eight-xiu-btn") {
+                    lightClassList = ["twenty-eight-xiu-btn", "direction-btn", "attribute-btn", "animal-btn", "season-btn", "meaning-btn"]
+                    lightIdList = getPathForOneButton(firstClassName);
+                }
+                showStar(firstClassName)
+                changeOpacityByClass(lightClassList, 1)
+                changeOpacityById(lightIdList, 1)
+                console.log(clickNum, "第二次")
+
             }
-            showStar(firstClassName)
-            changeOpacityByClass(lightClassList, 1)
-            changeOpacityById(lightIdList, 1)
         });
     });
 
@@ -276,23 +313,7 @@ window.addEventListener('load', function () {
 });
 
 
-//右边的图展示星星
-function showStar(name) {
-    if (name == 'three-yuan-btn') {
-        loadAstrologySvg('./src/svg/ThreeYuan.svg');
-        console.log("点击三垣")
-    } else if (name == 'four-xiang-btn') {
-        loadAstrologySvg('./src/svg/FourXiang.svg');
-        console.log("点击四象")
-    } else if (name == 'five-star-btn') {
-        loadAstrologySvg('./src/svg/FiveStar.svg');
-        lightStars = document.querySelectorAll(".five-star");
-        console.log("点击五星")
-    } else if (name == 'twenty-eight-xiu-btn') {
-        loadAstrologySvg('./src/svg/TwentyEightXiu.svg');
-        console.log("点击二十八宿")
-    }
-}
+
 
 loadAstrologySvg('./src/svg/All.svg')
 loadConnectionSvg();

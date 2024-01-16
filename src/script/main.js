@@ -33,7 +33,9 @@ window.addEventListener('scroll', function () {
 
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
             if (tmpMenu) {
+
                 document.getElementById(tmpMenu).style.fontWeight = 'normal';
+                document.getElementById(tmpMenu).style.textDecoration = 'none';
             }
             const sec = section.id
             if (sec == 'chapter01') {
@@ -50,6 +52,8 @@ window.addEventListener('scroll', function () {
                 tmpMenu = 'menu04'
             }
             document.getElementById(tmpMenu).style.fontWeight = 'bolder';
+            document.getElementById(tmpMenu).style.textDecoration = 'underline';
+
         }
 
 
