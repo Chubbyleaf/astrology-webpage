@@ -97,20 +97,27 @@ section {
     color: white;
     padding: 15px;
     flex-direction: column;
-    display: none;
     justify-content: left;
     font-size: 20px;
     z-index: 10;
     box-shadow: 5px 0 20px rgba(255, 255, 255, 0.6);
-    animation: slideIn 0.5s ease-out;
-
-    /* 右边阴影发光效果 */
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    display: flex;
 }
 
+.visible {
+    animation-name: slideIn;
+}
+
+.hidden {
+    animation-name: slideOut;
+}
 
 @keyframes slideIn {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-110%);
     }
 
     to {
@@ -124,7 +131,7 @@ section {
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX(-110%);
     }
 }
 
@@ -584,6 +591,7 @@ section {
     width: 100%;
     z-index: -1;
     margin-top: -250vh;
+    opacity: 0.5;
 }
 
 #animation-div {
@@ -608,6 +616,7 @@ section {
     -o-transform: none;
     transform: none;
 }
+
 
 @keyframes pulse {
     0% {

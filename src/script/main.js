@@ -57,10 +57,33 @@ window.addEventListener('scroll', function () {
     });
 });
 
-
 //菜单栏显示切换
 function toggleMenu() {
     var leftMenu = document.getElementById('left-menu');
-    leftMenu.style.display = (leftMenu.style.display === 'none') ? 'flex' : 'none';
-    
+    if (leftMenu.classList.contains('hidden')) {
+        leftMenu.setAttribute('class', '');
+        leftMenu.classList.add('visible')
+    } else {
+        leftMenu.setAttribute('class', '');
+        leftMenu.classList.add('hidden')
+    }
 }
+
+
+// 添加点击事件监听器到 document
+document.addEventListener('click', function (event) {
+    // 检查点击的元素是否在 left-menu 内部
+    const isMenuIconClick = event.target.classList.contains('menu-icon');
+    // 检查点击的元素是否是"menu-icon"
+    const isLeftMenuClick = event.target.closest('#left-menu');
+    const leftMenu = document.getElementById('left-menu');
+
+    // 如果不是 left-menu 内部的点击且不是 menu-icon，则执行你的操作
+    if (!isLeftMenuClick && !isMenuIconClick) {
+        // 判断 left-menu 的显示状态，并执行相应操作
+        if (leftMenu.classList.contains('visible')) {
+            leftMenu.setAttribute('class', '');
+            leftMenu.classList.add('hidden')
+        }
+    }
+});

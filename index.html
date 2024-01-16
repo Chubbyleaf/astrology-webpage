@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <title>银汉流转，诗说星相</title>
   <link rel="stylesheet" href="./src/style/index.css" />
+  <link rel="stylesheet" href="./src/style/explore.css" />
+
   <link rel="icon" href="./src/image/star.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,16 +24,16 @@
 <body>
   <!-- Navigation -->
   <nav id="navbar">
-    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()"/>
+    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()" />
     <div id="menu-text"></div>
   </nav>
 
-  <div id="left-menu" class="hide-menu">
-    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()"/>
-    <a href="#chapter01" class="page-scroll" id="menu01">第一章<br/>繁星点点，你我其名</a>
-    <a href="#chapter02" class="page-scroll" id="menu02">第二章<br/>仰望星空，共托情思</a>
-    <a href="#chapter03" class="page-scroll" id="menu03">第三章<br/>以人为镜，诗星闪烁</a>
-    <a href="#explore-sec" class="page-scroll" id="menu04">第四章<br/>星空探索</a>
+  <div id="left-menu" class="hidden">
+    <img class="menu-icon" src="./src/image/menu.png" alt="menu" onclick="toggleMenu()" />
+    <a href="#chapter01" class="page-scroll" id="menu01">第一章<br />繁星点点，你我其名</a>
+    <a href="#chapter02" class="page-scroll" id="menu02">第二章<br />仰望星空，共托情思</a>
+    <a href="#chapter03" class="page-scroll" id="menu03">第三章<br />以人为镜，诗星闪烁</a>
+    <a href="#explore01" class="page-scroll" id="menu04">第四章<br />星空探索</a>
 
   </div>
   <header>
@@ -281,17 +283,55 @@
       <img id="custom-stars04" src="./src/svg/custom-stars/cstar4.svg" alt="custom-stars" />
     </div>
   </section>
-  <section id="explore-sec">
+  <section id="explore01">
     <!-- 探索 -->
     <div class="vertical-layout" id="explore-warp">
       <div class="center-text" style="z-index: 2;">
         我们对2385首诗歌均进行了星星的绘制，组成了唐代诗词星空。让我们点击星空或者左边的面板，进行自由探索。
       </div>
       <div style="margin-top: 50px;">
-        <a href="explore.html" class="animated-button">开始探索星空</a>
+        <a href="#explore02" class="animated-button page-scroll">开始探索星空</a>
       </div>
     </div>
-    <img src="./src/image/tail-bg.png" alt="tail-bg" id="tail-bg" />
+    <!-- <img src="./src/image/tail-bg.png" alt="tail-bg" id="tail-bg" /> -->
+  </section>
+  <section id="explore02" style="height:90vh;margin-top: 0 !important;">
+    <div class="horizontal-layout">
+      <div style="width: 350px;height: 90vh;">
+        <div class="sidebar-above-div">
+          <div class="sidebar-title-div">
+            <div>选择筛选条件</div>
+          </div>
+
+          <el-select v-model="value" placeholder="请选择您要查看的星" @change="handleSelect">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+          </el-select>
+        </div>
+
+        <div class="sidebar-below-div">
+          <div class="sidebar-title-div">
+            <div>Legend</div>
+          </div>
+          <div class="poetry-content-div">
+            <p><strong>{{poetry.title}}</strong></p>
+            <p style="font-size: small">{{poetry.author}}</p>
+            <p style="font-size: small">{{poetry.content}}</p>
+          </div>
+
+          <div class="poetry-content-info-div">
+            <p><strong>在诗中使用的别名:</strong> {{poetry.otherName}}</p>
+            <p><strong>星宿名:</strong> {{poetry.originName}}</p>
+            <p><strong>主题:</strong> {{poetry.theme}}</p>
+            <p><strong>体裁:</strong> {{poetry.genre}}</p>
+            <p><strong>情感:</strong> {{poetry.emotion}}</p>
+            <p><strong>入诗手法:</strong> {{poetry.method}}</p>
+          </div>
+        </div>
+      </div>
+      <div style="width: 100%;height: 90vh;padding: 20px;" id="sky-canvas">
+
+      </div>
+    </div>
   </section>
 
 
@@ -302,6 +342,8 @@
   <script src="./src/script/Astrology.js"></script>
   <script type="module" src="./src/script/Sankey.js"></script>
   <script type="module" src="./src/script/WordCloud.js"></script>
+  <script type="module" src="./src/script/explore.js"></script>
+
   <script src="./src/script/Emotion.js"></script>
 
 
