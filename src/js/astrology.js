@@ -125,6 +125,9 @@ function showStar(name) {
     } else if (name == 'twenty-eight-xiu-btn') {
         loadAstrologySvg('./src/svg/TwentyEightXiu.svg');
         console.log("点击二十八宿")
+    } else{
+        loadAstrologySvg('./src/svg/All.svg');
+        console.log("显示全部")
     }
 }
 
@@ -238,6 +241,7 @@ window.addEventListener('load', function () {
                 });
                 clickNum = -1
                 tmpLeftBtn = ''
+                showStar()
             } else if(clickNum === -1){
                 clickNum = 0
             }
