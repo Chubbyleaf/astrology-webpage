@@ -384,6 +384,17 @@ section {
     left: 0;
     bottom: 0;
     right: 0;
+    animation: rotateAnimation 5s linear infinite; /* 调整持续时间和其他参数 */
+
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* 圆形旋转别名图结束 */

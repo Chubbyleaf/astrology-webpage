@@ -238,8 +238,6 @@ window.addEventListener('load', function () {
                 });
                 clickNum = -1
                 tmpLeftBtn = ''
-                console.log(clickNum, "第一次")
-                console.log(tmpRightBtn, "第一次")
             } else if(clickNum === -1){
                 clickNum = 0
             }
@@ -276,8 +274,6 @@ window.addEventListener('load', function () {
                 showStar(firstClassName)
                 changeOpacityByClass(lightClassList, 1)
                 changeOpacityById(lightIdList, 1)
-                console.log(clickNum, "第二次")
-
             }
         });
     });

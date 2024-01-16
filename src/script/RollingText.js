@@ -152,6 +152,7 @@ const rollingInfo = [
 function drawRollingDiv() {
     const chartContainer = document.getElementById('Rolling-Star-Chart');
     for (let i = 0; i < rollingInfo.length; i++) {
+        // 生成前面的标题
         if (i == 0) {
             const typeNameDiv = document.createElement('div');
             typeNameDiv.classList.add('rolling-left-type-name');
@@ -183,6 +184,21 @@ function drawRollingDiv() {
             spanEle.innerText = letter
             let r = (360 / otherName.length) * j
             spanEle.style.transform = `rotate(${r}deg)`
+            spanEle.style.animation = `rotateAnimation-${i}-${j} 20s linear infinite`;
+
+            // Define dynamic keyframes for each span
+            let dynamicKeyframes = `@keyframes rotateAnimation-${i}-${j} {
+                0% {
+                    transform: rotate(${r}deg);
+                }
+                100% {
+                    transform: rotate(${r + 360}deg);
+                }
+            }`;
+            // Create a style element and append the dynamic keyframes
+            let styleElem = document.createElement("style");
+            styleElem.innerHTML = dynamicKeyframes;
+            document.head.appendChild(styleElem);
             innerDiv.appendChild(spanEle)
         }
         let centerText = document.createElement("div")
