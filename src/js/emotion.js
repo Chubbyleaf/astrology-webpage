@@ -398,7 +398,7 @@ function drawRoseChart() {
                         fontFamily: 'SongTi-regular',
                         color: "#fff",
                         backgroundColor: {
-                            image: '../image/blue-star3.png',
+                            image: '/src/image/blue-star3.png',
                         },
                         width: 106,
                         height: 106,
@@ -411,7 +411,7 @@ function drawRoseChart() {
                         fontFamily: 'SongTi-regular',
                         color: "#fff",
                         backgroundColor: {
-                            image: '../image/blue-star3.png',
+                            image: '/src/image/blue-star3.png',
                         },
                         width: 106,
                         height: 106,

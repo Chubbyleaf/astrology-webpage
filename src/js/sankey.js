@@ -5,77 +5,82 @@ var myChart = echarts.init(dom, null, {
     useDirtyRect: false
 });
 
+// 设置节点labels
+sankeyData.nodes.forEach(node => {
+    node.label = {
+        show: true,
+        fontFamily: "SongTi-regular",
+        color: "#fff"
+    };
+    if (node.y === 50) {
+        node.label.position = "top";
+    } else {
+        node.label.
+        position = "bottom";
+    }
+
+     // 根据节点的y值判断是否使用本地图片
+     if (node.y === 450) {
+        node.symbol = 'image://src/image/sankey-icon/1.png',
+        node.symbolSize = [30, 30]; // 设置图片的大小
+    }
+    
+});
+
+// 设置连接线颜色与源节点一样
+sankeyData.links.forEach(link => {
+    const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+    link.lineStyle = {
+        color: sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white'
+    };
+});
+
 var option;
 
 option = {
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove'
-    },
-    animation: false,
+    tooltip: {},
+    animationDurationUpdate: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    layout: "force",
     series: [
         {
-            type: 'sankey',
-            bottom: '10%',
-            emphasis: {
-                focus: 'adjacency'
+            type: 'graph',
+            layout: 'none',
+            roam: true,
+            label: {
+                show: true,
+                fontFamily: "SongTi-regular",
+                position: "top",
+                color: "#fff"
+            },
+            symbolSize: 20,//节点大小
+            roam: false,//不可拖拽和缩放
+            edgeSymbol: ['none', 'none'],
+            edgeLabel: {
+                fontSize: 20
             },
             data: sankeyData.nodes,
+            // links: [],
             links: sankeyData.links,
-            nodeAlign: 'justify',
-            draggable: false,
-            orient: 'vertical',
-            color: ['#8685BF', '#5478D4', '#A5DAE2', '#82C4D2', '#46C3EA', '#7EB6DB', '#5CB1DA', '#53A6DA', '#31A9DD', '#3E90B6', '#045DAD', '#045DAD', '#003E6E', '#143385', '#17216E'],
-            label: {
-                position: 'top'
-            },
             lineStyle: {
-                color: 'source',
-                curveness: 0.5
+                opacity: 0.3,
+                width: 1,
+                // curveness: 0,
+                color: "source"
             },
-            label: {
-                fontFamily: "SongTi-regular",
-                fontSize: 8,
-                position: 'inside',
-                color: '#fff',
+            itemStyle: {
+                color: "white",
             },
-            // nodeGap: 30,
-            levels: [
-                {
-                    depth: 0,
-                    itemStyle: {
-                    },
-                    lineStyle: {
-                        color: 'source',
-                        opacity: 0.6
-                    }
-                },
-                {
-                    depth: 1,
-                    itemStyle: {
-                        color: '#000',
-                        borderColor:"#fff"
-                    },
-                    lineStyle: {
-                        color: 'target',
-                        opacity: 0.3
-                    }
-                },
-                {
-                    depth: 2,
-                    itemStyle: {
-                        color: '#b3cde3'
-                    },
-                    lineStyle: {
-                        color: 'target',
-                        opacity: 0.2
-                    }
+            emphasis: {
+                focus: 'adjacency',
+                lineStyle:{
+                    opacity: 1,
+                    width: 1.5,
                 }
-            ],
+            }
         }
     ]
 };
-// })
 
 if (option && typeof option === 'object') {
     myChart.setOption(option);
