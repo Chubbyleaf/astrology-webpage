@@ -115,6 +115,14 @@ section {
     animation-name: slideOut;
 }
 
+.show-panel {
+    animation-name: slideIn2;
+}
+
+.hide-panel {
+    animation-name: slideOut2;
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(-110%);
@@ -132,6 +140,26 @@ section {
 
     to {
         transform: translateX(-110%);
+    }
+}
+
+@keyframes slideIn2 {
+    from {
+        transform: translateX(150%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut2 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(150%);
     }
 }
 

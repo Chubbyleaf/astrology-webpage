@@ -8,11 +8,11 @@
      height: 100%;
      width: 100%;
      background-color: black;
-    
+
  }
 
- #app{
-    font-family: 'SongTi-regular';
+ #app {
+     font-family: 'SongTi-regular';
  }
 
  .star {
@@ -59,9 +59,10 @@
  .sidebar-above-div {
      border-radius: 10px;
      border: 1.5px solid white;
-     margin-top: 30px;
+     margin-top: 10px;
      width: 300px;
-     height: 42%;
+     height: 42vh;
+     min-height: 300px;
      background-color: transparent;
      text-align: center
  }
@@ -73,23 +74,91 @@
      border: 1.5px solid white;
      margin-top: 30px;
      width: 300px;
-     height: 42%;
+     height: 42vh;
+     min-height: 300px;
      background-color: transparent;
      text-align: center;
      margin-top: 20px;
      overflow-y: scroll;
  }
 
- /* 诗词的内容 */
- .poetry-content-div {
-     margin: 15px;
+ /* 筛选部分 */
+ input {
+     width: 175px;
+     height: 26px;
+     border-radius: 6px;
+
  }
 
- /* 诗词的内容 */
+ select {
+     width: 180px;
+     height: 28px;
+     font-family: 'SongTi-regular';
+     font-size: 16px;
+     text-align: center;
+     border-radius: 6px;
+
+ }
+
+ option {
+     font-family: 'SongTi-regular';
+     padding: 5px 0;
+     font-size: 16px;
+     height: 45px !important;
+ }
+
+ option:checked {
+     font-weight: bold;
+ }
+
+ .filter-option {
+     margin: 10px 0px;
+
+ }
+
+ .filter-label {
+     width: 70px;
+     text-align: right;
+     margin-right: 10px;
+ }
+
+ /* 筛选功能结束 */
+
+ /* 查看诗词详情的右侧panel */
+ #poetry-detail-wrap {
+     height: 85vh;
+     width: 300px;
+     z-index: 6;
+     position: absolute;
+     right: 30px;
+     top: 40px;
+     border: 1.5px solid #fff;
+     border-radius: 5px;
+     animation-duration: 1s;
+     animation-timing-function: ease-in-out;
+     animation-fill-mode: both;
+     min-height: 620px;
+     overflow: auto;
+ }
+
+ #close-btn {
+     width: 100%;
+     text-align: right;
+     font-size: 30px;
+ }
+
+ .poetry-content-div {
+     margin: 15px;
+     text-align: center;
+ }
+
  .poetry-content-info-div {
      margin: 30px 15px 15px 15px;
      text-align: left;
  }
+
+ /* 右侧panel结束 */
+
 
  ::-webkit-scrollbar {
      display: none;
@@ -114,22 +183,22 @@
      animation: blink 5s infinite;
  }
 
-/* 返回按钮 */
-#back-button {
-    display: inline-block;
-    padding: 10px 10px;
-    font-size: 12px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-}
+ /* 返回按钮 */
+ #back-button {
+     display: inline-block;
+     padding: 10px 10px;
+     font-size: 12px;
+     text-align: center;
+     text-decoration: none;
+     cursor: pointer;
+     background-color: #000;
+     color: #fff;
+     border: 1px solid #fff;
+     border-radius: 5px;
+     position: fixed;
+     right: 20px;
+     top: 20px;
+ }
 
  @keyframes blink {
 
@@ -146,8 +215,8 @@
  }
 
  @font-face {
-    font-family: 'SongTi-regular';
-    src: url('../font/方正清刻本悦宋简体.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+     font-family: 'SongTi-regular';
+     src: url('../font/方正清刻本悦宋简体.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+ }
