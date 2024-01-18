@@ -16,15 +16,18 @@ sankeyData.nodes.forEach(node => {
         node.label.position = "top";
     } else {
         node.label.
-        position = "bottom";
+            position = "bottom";
     }
 
-     // 根据节点的y值判断是否使用本地图片
-     if (node.y === 450) {
-        node.symbol = 'image://src/image/sankey-icon/1.png',
+    // 根据节点的y值判断是否使用本地图片
+    if (node.y === 450) {
+        node.symbol = 'image://src/svg/sankey-icons/1.svg',
         node.symbolSize = [30, 30]; // 设置图片的大小
+        node.itemStyle = {
+            color: "#202020",
+        };
     }
-    
+
 });
 
 // 设置连接线颜色与源节点一样
@@ -34,6 +37,56 @@ sankeyData.links.forEach(link => {
         color: sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white'
     };
 });
+
+//调整白色透明度
+sankeyData.links.forEach(link => {
+    const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+    const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+
+    link.lineStyle = {
+        color: sourceColor,
+        opacity: sourceColor === 'white' ? 0.05 : 0.3,
+        width: 1,
+    };
+});
+
+
+
+myChart.on('mouseover', function (params) {
+    if (params.dataType === 'node') {
+        const dataName = params.data.name;
+        const linksData = sankeyData.links.filter(link => link.source === dataName || link.target === dataName);
+        linksData.forEach(link => {
+            link.lineStyle.opacity = 0.6;
+            link.lineStyle.width = 1.5
+        });
+        myChart.setOption({
+            series: [{
+                links: sankeyData.links
+            }]
+        });
+    }
+});
+
+// Add event listener for mouseout event
+myChart.on('mouseout', function () {
+    sankeyData.links.forEach(link => {
+        const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+        const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+
+        link.lineStyle = {
+            color: sourceColor,
+            opacity: sourceColor === 'white' ? 0.05 : 0.3,
+            width: 1,
+        };
+    });
+    myChart.setOption({
+        series: [{
+            links: sankeyData.links
+        }]
+    });
+});
+
 
 var option;
 
@@ -65,7 +118,6 @@ option = {
             lineStyle: {
                 opacity: 0.3,
                 width: 1,
-                // curveness: 0,
                 color: "source"
             },
             itemStyle: {
@@ -73,10 +125,10 @@ option = {
             },
             emphasis: {
                 focus: 'adjacency',
-                lineStyle:{
+                lineStyle: {
                     opacity: 1,
                     width: 1.5,
-                }
+                },
             }
         }
     ]
@@ -85,5 +137,7 @@ option = {
 if (option && typeof option === 'object') {
     myChart.setOption(option);
 }
+
+
 
 window.addEventListener('resize', myChart.resize);

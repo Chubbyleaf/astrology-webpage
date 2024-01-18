@@ -2,322 +2,178 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/style/explore.css" />
-  <title>✨古诗词星空探索</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/explore.css" />
+    <link rel="stylesheet" href="./src/style/index.css" />
 
-  <script src="./Star.js"></script>
-  <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css" />
-  <style>
-    #app {
-      display: flex;
-      height: 100vh;
-    }
+    <title>✨古诗词星空探索</title>
 
-    .el-container {
-      color: white;
-      background: transparent;
-    }
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css" />
 
-    #content {
-      flex: 1;
-      padding: 20px;
-    }
-  </style>
 </head>
 
 <body style="background-color: black">
-  <div id="app">
-    <el-container :v-loading="loading">
-      <el-header>诗 星 闪 烁</el-header>
-      <el-container>
-        <el-aside width="25%">
-          <div class="sidebar-above-div">
-            <div class="sidebar-title-div">
-              <div>选择您想查看的星象</div>
-              <a href="index.html" id="back-button">返回</a>
+    <div id="explore-header">
+        <div>诗词星空</div>
+        <a href="index.html" id="back-button">返回</a>
+    </div>
+    <div id="explore" style="height:90vh">
+        <div class="horizontal-layout" style="position: relative;">
+            <div style="width: 350px;height: 90vh;margin-left: 28px;">
+                <div class="sidebar-above-div">
+                    <div class="sidebar-title-div">
+                        <div>选择筛选条件</div>
+                    </div>
+                    <div class="filter-option horizontal-layout">
+                        <div class="filter-label">星象</div>
+                        <select id="select-originName">
+
+
+                            <option value="全部">全部</option>
+
+                            <option value="斗宿">斗宿</option>
+                            <option value="牛宿">牛宿</option>
+                            <option value="女宿">女宿</option>
+                            <option value="虚宿">虚宿</option>
+                            <option value="危宿">危宿</option>
+                            <option value="室宿">室宿</option>
+                            <option value="壁宿">壁宿</option>
+
+                            <option value="井宿">井宿</option>
+                            <option value="鬼宿">鬼宿</option>
+                            <option value="柳宿">柳宿</option>
+                            <option value="星宿">星宿</option>
+                            <option value="张宿">张宿</option>
+                            <option value="翼宿">翼宿</option>
+                            <option value="轸宿">轸宿</option>
+
+                            <option value="奎宿">奎宿</option>
+                            <option value="娄宿">娄宿</option>
+                            <option value="胃宿">胃宿</option>
+                            <option value="昴宿">昴宿</option>
+                            <option value="毕宿">毕宿</option>
+                            <option value="觜宿">觜宿</option>
+                            <option value="参宿">参宿</option>
+
+                            <option value="角宿">角宿</option>
+                            <option value="亢宿">亢宿</option>
+                            <option value="氐宿">氐宿</option>
+                            <option value="房宿">房宿</option>
+                            <option value="心宿">心宿</option>
+                            <option value="尾宿">尾宿</option>
+                            <option value="箕宿">箕宿</option>
+
+                            <option value="紫微">紫微</option>
+                            <option value="太微">太微</option>
+                            <option value="天市">天市</option>
+
+                            <option value="金星">金星</option>
+                            <option value="木星">木星</option>
+                            <option value="水星">水星</option>
+                            <option value="火星">火星</option>
+                            <option value="土星">土星</option>
+                        </select>
+                    </div>
+                    <div class="filter-option horizontal-layout">
+                        <div class="filter-label">作者</div>
+                        <input id="input-author">
+
+
+                        </input>
+                    </div>
+                    <div class="filter-option horizontal-layout">
+                        <div class="filter-label">情感</div>
+                        <select id="select-emotion">
+                            <option value="全部">全部</option>
+                            <option value="兴奋">兴奋</option>
+                            <option value="爱意">爱意</option>
+                            <option value="悲伤">悲伤</option>
+                            <option value="迷茫">迷茫</option>
+                            <option value="愤怒">愤怒</option>
+                            <option value="焦虑">焦虑</option>
+                            <option value="思念">思念</option>
+                            <option value="闲适">闲适</option>
+                            <option value="开心">开心</option>
+                            <option value="喜爱">喜爱</option>
+                            <option value="感悟">感悟</option>
+                            <option value="向往">向往</option>
+                            <option value="赞美">赞美</option>
+                            <option value="中性">中性</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-option horizontal-layout">
+                        <div class="filter-label">入诗手法</div>
+                        <select id="select-method">
+                            <option value="全部">全部</option>
+                            <option value="星为主题">星为主题</option>
+                            <option value="星为元素">星为元素</option>
+                            <option value="星为原型意象">星为原型意象</option>
+                            <option value="星为代语">星为代语</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-option horizontal-layout">
+                        <div class="filter-label">题材</div>
+                        <select id="select-theme">
+                            <option value="全部">全部</option>
+                            <option value="山水田园">山水田园</option>
+                            <option value="边塞军旅">边塞军旅</option>
+                            <option value="咏史怀古">咏史怀古</option>
+                            <option value="咏物言志">咏物言志</option>
+                            <option value="送别怀人">送别怀人</option>
+                            <option value="羁旅思乡">羁旅思乡</option>
+                            <option value="爱情闺怨">爱情闺怨</option>
+                            <option value="感怀诗">感怀诗</option>
+                            <option value="哲理诗">哲理诗</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="horizontal-layout">
+                        <div id="reset-btn" style="cursor: pointer;">重置</div>
+                    </div>
+                </div>
+
+
+                <div class="sidebar-below-div">
+                    <div class="sidebar-title-div">
+                        <div>Legend</div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="width: 100%;height: 85vh;padding: 20px;overflow: auto;" id="sky-canvas">
+
             </div>
 
-            <el-select v-model="value" placeholder="请选择您要查看的星" @change="handleSelect">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-            </el-select>
-          </div>
+            <div id='poetry-detail-wrap' class="hide-panel">
+                <div id="close-btn" style="cursor: pointer;">×</div>
+                <div style="height:78vh;overflow: auto;min-height: 590px;">
+                    <div class="poetry-content-div">
+                        <p><strong><span id="poetry-title"></span></strong></p>
+                        <p style="font-size: small"><span id="poetry-author"></span></p>
+                        <p style="font-size: small"><span id="poetry-content"></span></p>
+                    </div>
+                    <hr />
+                    <div class="poetry-content-info-div">
+                        <p><strong>在诗中使用的别名:</strong> <span id="poetry-otherName"></span></p>
+                        <p><strong>星宿名:</strong> <span id="poetry-originName"></span></p>
+                        <p><strong>主题:</strong> <span id="poetry-theme"></span></p>
+                        <p><strong>体裁:</strong> <span id="poetry-genre"></span></p>
+                        <p><strong>情感:</strong> <span id="poetry-emotion"></span></p>
+                        <p><strong>入诗手法:</strong> <span id="poetry-method"></span></p>
+                    </div>
+                </div>
 
-          <div class="sidebar-below-div">
-            <div class="sidebar-title-div">
-              <div>详细信息</div>
-            </div>
-            <div class="poetry-content-div">
-              <p><strong>{{poetry.title}}</strong></p>
-              <p style="font-size: small">{{poetry.author}}</p>
-              <p style="font-size: small">{{poetry.content}}</p>
             </div>
 
-            <div class="poetry-content-info-div">
-              <p><strong>在诗中使用的别名:</strong> {{poetry.otherName}}</p>
-              <p><strong>星宿名:</strong> {{poetry.originName}}</p>
-              <p><strong>主题:</strong> {{poetry.theme}}</p>
-              <p><strong>体裁:</strong> {{poetry.genre}}</p>
-              <p><strong>情感:</strong> {{poetry.emotion}}</p>
-              <p><strong>入诗手法:</strong> {{poetry.method}}</p>
-            </div>
-          </div>
-        </el-aside>
-        <el-main id="main"> </el-main>
-      </el-container>
-    </el-container>
-  </div>
+        </div>
+        </section>
 </body>
 
-<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
-<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
-<script type="module">
-  import poetryArray from "./src/data/data.js";
-  let v = new Vue({
-    el: "#app",
-    data: function () {
-      return {
-        sidebarWidth: "25%", // sidebar宽度
-        isSidebarCollapsed: false, //左侧sidebar显示状态
-        loading: true,
-        poetry: {
-          title: "选择星星后查看",
-          author: "",
-          genre: "选择星星后查看",
-          otherName: "选择星星后查看",
-          originName: "选择星星后查看",
-          theme: "选择星星后查看",
-          content: "选择星星后查看",
-          emotion: "选择星星后查看",
-          method: "选择星星后查看",
-        },
-        value: "", //用户选择的查看的星宿
-        options: [
-          {
-            "value": "全部",
-            "label": "全部"
-          },
-          {
-            "value": "木星",
-            "label": "木星"
-          },
-          {
-            "value": "金星",
-            "label": "金星"
-          },
-          {
-            "value": "牛宿",
-            "label": "牛宿"
-          },
-          {
-            "value": "鬼宿",
-            "label": "鬼宿"
-          },
-          {
-            "value": "虚宿",
-            "label": "虚宿"
-          },
-          {
-            "value": "土星",
-            "label": "土星"
-          },
-          {
-            "value": "室宿",
-            "label": "室宿"
-          },
-          {
-            "value": "胃宿",
-            "label": "胃宿"
-          },
-          {
-            "value": "昴宿",
-            "label": "昴宿"
-          },
-          {
-            "value": "参宿",
-            "label": "参宿"
-          },
-          {
-            "value": "斗宿",
-            "label": "斗宿"
-          },
-          {
-            "value": "尾宿",
-            "label": "尾宿"
-          },
-          {
-            "value": "天市",
-            "label": "天市"
-          },
-          {
-            "value": "翼宿",
-            "label": "翼宿"
-          },
-          {
-            "value": "毕宿",
-            "label": "毕宿"
-          },
-          {
-            "value": "太微",
-            "label": "太微"
-          },
-          {
-            "value": "觜宿",
-            "label": "觜宿"
-          },
-          {
-            "value": "星宿",
-            "label": "星宿"
-          },
-          {
-            "value": "壁宿",
-            "label": "壁宿"
-          },
-          {
-            "value": "房宿",
-            "label": "房宿"
-          },
-          {
-            "value": "张宿",
-            "label": "张宿"
-          },
-          {
-            "value": "女宿",
-            "label": "女宿"
-          },
-          {
-            "value": "奎宿",
-            "label": "奎宿"
-          },
-          {
-            "value": "紫微",
-            "label": "紫微"
-          },
-          {
-            "value": "危宿",
-            "label": "危宿"
-          },
-          {
-            "value": "柳宿",
-            "label": "柳宿"
-          },
-          {
-            "value": "火星",
-            "label": "火星"
-          },
-          {
-            "value": "氐宿",
-            "label": "氐宿"
-          },
-          {
-            "value": "井宿",
-            "label": "井宿"
-          },
-          {
-            "value": "亢宿",
-            "label": "亢宿"
-          },
-          {
-            "value": "心宿",
-            "label": "心宿"
-          },
-          {
-            "value": "水星",
-            "label": "水星"
-          },
-          {
-            "value": "角宿",
-            "label": "角宿"
-          },
-          {
-            "value": "娄宿",
-            "label": "娄宿"
-          },
-          {
-            "value": "箕宿",
-            "label": "箕宿"
-          },
-          {
-            "value": "轸宿",
-            "label": "轸宿"
-          }
-        ],
-      };
-    },
-    methods: {
-      handleSelect(key, keyPath) {
-        this.value = key;
-        console.log(this.value)
-        this.filterStars();
-      },
-      //筛选星星
-      filterStars() {
-        var filteredStars;
-        if (this.value == '全部') {
-          filteredStars = poetryArray
-        } else {
-          filteredStars = poetryArray.filter((poetry) => poetry.originName === this.value);
-        }
-        this.createStars(filteredStars);
-      },
-      //获取星星出现的位置
-      getRandomPosition() {
-        const mainElement = document.getElementById("main");
-        const mainRect = mainElement.getBoundingClientRect();
-        const x = mainRect.left + Math.random() * (mainRect.width - 100);
-        const y = mainRect.top + Math.random() * (mainRect.height - 100);
-        return { x, y };
-      },
-      createStar(p) {
-        const star = document.createElement("div");
-        star.className = "star";
-        const { x, y } = this.getRandomPosition();
-        star.style.left = `${x}px`;
-        star.style.top = `${y}px`;
-        const svg = document.createElement("img");
-        svg.src = "./src/svg/star.svg";
-        svg.alt = "star-svg";
-        // svg.style.width = "10px"; // 设置缩小后的宽度
-        // svg.style.height = "10px"; // 设置缩小后的高度
-        svg.classList.add("star-animation");
+<script type="module" src="./src/js/explore.js"></script>
 
-        const animationDuration = Math.random() * 5 + 2;
-        const animationDelay = Math.random();
-        svg.style.animationDuration = `${animationDuration}s`;
-        svg.style.animationDelay = `-${animationDelay}s`;
-        //添加点击效果
-        star.addEventListener("click", () => {
-          this.poetry = p
-        });
 
-        //添加悬浮效果
-        const infoBox = document.createElement("div");
-        infoBox.className = "info-box";
-        infoBox.innerHTML = `<p>${p.title}</p>`;
-        star.appendChild(infoBox);
-        star.appendChild(svg);
-        document.getElementById("main").appendChild(star);
-
-        //动画最后的效果
-        void star.offsetWidth;
-        svg.style.opacity = 1;
-        // 随机设置星星的大小，最大50px，最小25px
-        const starSize = Math.floor(Math.random() * (50 - 25 + 1)) + 5;
-        svg.style.width = `${starSize}px`;
-        svg.style.height = `${starSize}px`;
-      },
-      createStars(starList) {
-        const existingStars = document.querySelectorAll(".star");
-        existingStars.forEach((star) => star.remove());
-        starList.forEach(this.createStar);
-      },
-    },
-    mounted() {
-      this.createStars(poetryArray);
-    },
-
-  });
-</script>
 
 </html>
