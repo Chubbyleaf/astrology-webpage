@@ -21,7 +21,7 @@ sankeyData.nodes.forEach(node => {
 
     // 根据节点的y值判断是否使用本地图片
     if (node.y === 450) {
-        node.symbol = 'image://src/svg/sankey-icons/1.svg',
+        node.symbol = `image://src/svg/sankey-icons/${node.name}.svg`,
         node.symbolSize = [30, 30]; // 设置图片的大小
         node.itemStyle = {
             color: "#202020",

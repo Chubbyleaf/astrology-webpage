@@ -181,7 +181,7 @@ const sankeyData = {
             "y": 450
         },
         {
-            "name": "迷茫",
+            "name": "焦虑",
             "x": 500,
             "y": 50,
             itemStyle:{
@@ -189,7 +189,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "喜爱",
+            "name": "迷茫",
             "x": 620,
             "y": 50,
             itemStyle:{
@@ -197,7 +197,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "兴奋",
+            "name": "悲伤",
             "x": 740,
             "y": 50,
             itemStyle:{
@@ -205,7 +205,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "感悟",
+            "name": "愤怒",
             "x": 860,
             "y": 50,
             itemStyle:{
@@ -213,7 +213,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "悲伤",
+            "name": "思念",
             "x": 980,
             "y": 50,
             itemStyle:{
@@ -221,7 +221,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "向往",
+            "name": "感悟",
             "x": 1100,
             "y": 50,
             itemStyle:{
@@ -237,7 +237,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "爱意",
+            "name": "闲适",
             "x": 1340,
             "y": 50,
             itemStyle:{
@@ -245,7 +245,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "愤怒",
+            "name": "向往",
             "x": 1460,
             "y": 50,
             itemStyle:{
@@ -253,7 +253,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "思念",
+            "name": "喜爱",
             "x": 1580,
             "y": 50,
             itemStyle:{
@@ -261,7 +261,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "开心",
+            "name": "兴奋",
             "x": 1700,
             "y": 50,
             itemStyle:{
@@ -269,7 +269,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "赞美",
+            "name": "开心",
             "x": 1820,
             "y": 50,
             itemStyle:{
@@ -277,7 +277,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "焦虑",
+            "name": "赞美",
             "x": 1940,
             "y": 50,
             itemStyle:{
@@ -285,7 +285,7 @@ const sankeyData = {
             }
         },
         {
-            "name": "闲适",
+            "name": "爱意",
             "x": 2060,
             "y": 50,
             itemStyle:{

@@ -187,8 +187,16 @@
       </div>
     </div>
 
-    <div id='Sankey-Chart' style="height: 650px; width:100%;min-width: 1400px;margin-top: -50px;"></div>
-    <div class="bottom-chart-name">著名诗人常用意象及其表达情绪统计</div>
+    <div class="horizontal-layout">
+      <svg width="550" height="50">
+        <line x1="100" y1="25" x2="450" y2="25" stroke="#C8F2FF" stroke-width="1" />
+        <polygon points="452,25 440,20 440,30" fill="#C8F2FF" />
+        <text x="50" y="30" fill="white" text-anchor="middle">负向情感</text>
+        <text x="500" y="30" fill="white" text-anchor="middle">正向情感</text>
+      </svg>
+    </div>
+    <div id='Sankey-Chart' style="height: 650px; width:100%;min-width: 1400px;margin-top: -80px;"></div>
+    <div class="bottom-chart-name" style="margin-top: -50px !important;">著名诗人常用意象及其表达情绪统计</div>
   </section>
   <section id="chapter03">
     <div id="trigger01"></div>

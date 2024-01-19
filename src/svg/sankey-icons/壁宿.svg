@@ -1,0 +1,26 @@
+<svg width="56" height="58" viewBox="0 0 56 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="28" cy="29" rx="28" ry="29" fill="#202020"/>
+<path d="M22.0029 19.1599L31.4902 39.2075L31.7088 39.1041L22.2215 19.0564L22.0029 19.1599Z" fill="#F4F4F4"/>
+<path d="M33.0723 39.7741C33.4233 38.9652 33.0521 38.025 32.2432 37.6741C31.4344 37.3231 30.4942 37.6944 30.1432 38.5032C29.7923 39.3121 30.1635 40.2523 30.9724 40.6032C31.7812 40.9541 32.7214 40.5829 33.0723 39.7741Z" fill="url(#paint0_radial_945_1125)"/>
+<path d="M23.5645 19.7355C23.9155 18.9266 23.5442 17.9864 22.7354 17.6355C21.9266 17.2846 20.9864 17.6558 20.6354 18.4646C20.2845 19.2735 20.6557 20.2137 21.4645 20.5646C22.2734 20.9156 23.2136 20.5443 23.5645 19.7355Z" fill="url(#paint1_radial_945_1125)"/>
+<defs>
+<radialGradient id="paint0_radial_945_1125" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(31.5657 39.1446) rotate(-29.5055) scale(1.59646 1.59646)">
+<stop stop-color="#EFEFF0"/>
+<stop offset="0.09" stop-color="#E7E7E9"/>
+<stop offset="0.23" stop-color="#D2D3D6"/>
+<stop offset="0.41" stop-color="#AFB1B6"/>
+<stop offset="0.61" stop-color="#7F828A"/>
+<stop offset="0.82" stop-color="#424652"/>
+<stop offset="1" stop-color="#0A101F"/>
+</radialGradient>
+<radialGradient id="paint1_radial_945_1125" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(22.0587 19.1043) rotate(-29.5056) scale(1.59646 1.59646)">
+<stop stop-color="#EFEFF0"/>
+<stop offset="0.09" stop-color="#E7E7E9"/>
+<stop offset="0.23" stop-color="#D2D3D6"/>
+<stop offset="0.41" stop-color="#AFB1B6"/>
+<stop offset="0.61" stop-color="#7F828A"/>
+<stop offset="0.82" stop-color="#424652"/>
+<stop offset="1" stop-color="#0A101F"/>
+</radialGradient>
+</defs>
+</svg>
