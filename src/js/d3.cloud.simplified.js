@@ -17,6 +17,7 @@ cloud = {
         var fontSizeScale = d3.scale.linear()
             .domain([d3.min(options.words, function (d) { return d.size; }), d3.max(options.words, function (d) { return d.size; })])
             .range(options.fontRange);
+            
         d3.layout.cloud().size([options.width, options.height])
             .words(options.words)
             .rotate(0)
@@ -46,7 +47,7 @@ cloud = {
                     .style("font-size", function (d) { return d.size + "px"; })
                     .style("font-family", options.font)
                     .style("fill", function (d) {
-                        return "rgba(255, 255, 255, " + fillOpacity(d.size) + ")";
+                        return "rgba(255, 255, 255, " + fillOpacity(d.count) + ")";
                     })
                     .attr("text-anchor", "middle")
                     .attr("transform", function (d) {
@@ -55,7 +56,7 @@ cloud = {
                     .text(function (d) { return d.text; })
 
                     .on("mouseover", function (d) {
-                        tooltip.html(`【${d.text}】,属于「${d.originName}」,共出现「${d.size}」次`)
+                        tooltip.html(`【${d.text}】,属于「${d.originName}」,共出现「${d.count}」次`)
                             .style("visibility", "visible")
                             .style("font-weight","bolder")
                     })

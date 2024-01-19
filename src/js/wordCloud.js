@@ -38,7 +38,7 @@ function drawXiuDiv() {
 
 function normalizeArray(arr) {
   // const maxVal = Math.max(...arr);
-  const maxVal = 34;
+  const maxVal = 120;
   const normalizedArray = arr.map(num => (num / maxVal) > 1 ? 1 : (num / maxVal));
   return normalizedArray;
 }
@@ -60,8 +60,8 @@ function getShrinkSize() {
 //绘制大的词云图
 function drawWordCloudChart() {
   cloud.make({
-    width: 940,
-    height: 450,
+    width: 1200,
+    height: 650,
     container: "#WordCloud-Chart",
     words: keywordNumber,
     fontRange: [10, 100]
@@ -85,11 +85,11 @@ function drawWordCloudChart1() {
     const otherNameEntry = starEntry.otherNames
     const shrinkSize = shrinkSizes[i]
     cloud.make({
-      width: 120,
+      width: 160,
       height: 70,
       container: '#' + containerName,
       words: otherNameEntry,
-      fontRange: [10 * shrinkSize, 50 * shrinkSize]
+      fontRange: [3 * shrinkSize, 20* shrinkSize]
     })
   }
 }
