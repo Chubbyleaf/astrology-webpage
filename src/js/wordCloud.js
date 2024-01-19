@@ -85,11 +85,11 @@ function drawWordCloudChart1() {
     const otherNameEntry = starEntry.otherNames
     const shrinkSize = shrinkSizes[i]
     cloud.make({
-      width: 160,
-      height: 70,
+      width: 120,
+      height: 100,
       container: '#' + containerName,
       words: otherNameEntry,
-      fontRange: [3 * shrinkSize, 20* shrinkSize]
+      fontRange: [3 * shrinkSize, 30* shrinkSize]
     })
   }
 }

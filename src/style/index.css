@@ -424,7 +424,9 @@ section {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
-    width: 1000px;
+    width: 1100px;
+    height: 400px;
+    z-index: 10;
 }
 
 #wordcloud-charts-wrap #three-boxes {
