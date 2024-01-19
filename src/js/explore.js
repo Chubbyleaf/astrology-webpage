@@ -32,6 +32,11 @@ async function filterPoetry() {
             // Add more conditions for additional filters
         );
     });
+    if (filteredPoetryList.length === 0) {
+        showNotFund()
+    } else {
+        closeNotFund()
+    }
     await createStars(filteredPoetryList)
 }
 
@@ -68,6 +73,25 @@ function updatePanelInfo(poetry) {
             element.textContent = poetry[key];
         }
     }
+}
+
+//加载效果
+function closeLoading() {
+    var div = document.getElementById('loading-container');
+    div.style.display = 'none'
+}
+function showLoading() {
+    var div = document.getElementById('loading-container');
+    div.style.display = 'flex'
+}
+
+function closeNotFund() {
+    var div = document.getElementById('not-fund-text');
+    div.style.display = 'none'
+}
+function showNotFund() {
+    var div = document.getElementById('not-fund-text');
+    div.style.display = 'flex'
 }
 
 // 监听下拉框的改变事件
@@ -120,6 +144,7 @@ function getRandomPosition() {
 async function createStars(starList) {
     const existingStars = document.querySelectorAll(".star");
     existingStars.forEach((star) => star.remove());
+    showLoading()
     const promises = starList.map(async (poetry) => {
         return new Promise((resolve) => {
             const star = document.createElement("div");
@@ -165,6 +190,7 @@ async function createStars(starList) {
     });
     // 等待所有的 Promise 完成
     await Promise.all(promises);
+    closeLoading()
 }
 
 

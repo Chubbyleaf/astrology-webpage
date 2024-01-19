@@ -233,6 +233,58 @@
      height: 30px;
  }
 
+ /* 加载和未查询到结果的效果 */
+ #loading-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+ }
+
+ .loading-spinner {
+     border: 4px solid rgba(0, 0, 0, 0.1);
+     border-top: 4px solid #fff;
+     border-radius: 50%;
+     width: 40px;
+     height: 40px;
+     animation: spin 1s linear infinite;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ .loading-text {
+     margin-top: 10px;
+     font-size: 18px;
+     color: #fff;
+     z-index: 3;
+ }
+
+ #not-fund-text {
+     font-size: 18px;
+     color: #fff;
+     z-index: 2
+ }
+
+ /* 加载效果结束 */
+
+ #sky-canvas {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 85vh;
+     padding: 20px;
+     overflow: auto;
+ }
+
  @keyframes blink {
 
      0%,
