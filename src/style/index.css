@@ -45,18 +45,13 @@ td {
     margin: 0 25px;
 }
 
-/* 每一个大的部分上边距 */
-.part-top-margin {
-    margin-top: 200px;
-}
-
 /* 导航栏 */
 #navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color:rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: center;
     padding: 15px;
@@ -255,8 +250,8 @@ section {
 
 /* 点点繁星，你我其名 */
 .headline-wrap {
-    margin-top: 300px;
-    margin-bottom: 300px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -265,27 +260,36 @@ section {
     padding-top: 100px;
 }
 
-.headline-wrap .headline-title {
-    font-size: 32px;
-    margin-top: -10px;
+.headline-title {
+    font-size: 53px;
+    margin-top: -230px;
     max-width: 600px;
     margin-bottom: 40px;
     font-weight: bolder;
 }
 
-.headline-wrap .headline-icon {
-    margin-left: -250px;
+.headline-icon {
+    margin-left: -580px;
 }
 
-
-/* 所有左侧的文字 */
-.left-wrap {
-    padding: 60px;
+.part-icon {
+    margin-top: 100px;
 }
 
-.left-wrap .left-content {
-    margin-left: 110px;
-    margin-top: -150px;
+.part-title {
+    font-size: 24px !important;
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.center-wrap {
+    margin-top: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
 }
 
 .blue-gradient-text {
@@ -312,10 +316,6 @@ section {
 
 }
 
-.left-wrap .left-content .left-text {
-    width: 580px;
-    margin-top: 20px;
-}
 
 /* 连线的解释性文字 */
 #connection-explain-text {
@@ -330,7 +330,7 @@ section {
 .bottom-chart-name {
     width: 100;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 /* 圆形旋转别名图 */
@@ -387,7 +387,8 @@ section {
     left: 0;
     bottom: 0;
     right: 0;
-    animation: rotateAnimation 5s linear infinite; /* 调整持续时间和其他参数 */
+    animation: rotateAnimation 5s linear infinite;
+    /* 调整持续时间和其他参数 */
 
 }
 
@@ -395,6 +396,7 @@ section {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -403,21 +405,17 @@ section {
 /* 圆形旋转别名图结束 */
 
 #wordcloud-charts-wrap {
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 50px;
     width: 100%;
 }
 
 /* 居中的文字 */
 .center-text {
-    width: 650px;
+    width: 600px;
     margin-bottom: 50px;
+    font-size: 16px;
 }
 
-/* 居中的文字 */
-.headline-wrap .center-text {
-    width: 620px;
-}
 
 /* 二十八星宿词云图 */
 #wordcloud-charts-wrap #twenty-eight-boxes {
@@ -487,9 +485,6 @@ section {
     margin-bottom: -120px;
 }
 
-.emotion-wrap .center-text {
-    margin-left: 50px;
-}
 
 #Center-Pie-Chart {
     height: 300px;
@@ -499,7 +494,6 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 
 /* 结尾的诗词介绍 */
 #poem-overall-wrap {
