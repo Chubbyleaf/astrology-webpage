@@ -144,8 +144,8 @@ section {
 }
 
 .cover {
-    min-height: 1300px;
-    width: 100%;
+    min-height: 700px;
+    width: 100vh;
 }
 
 /* 封面部分 */
@@ -167,11 +167,20 @@ section {
     z-index: 2;
 }
 
-#cover-bg {
+#cover-bg1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: -1;
+}
+
+#cover-bg2 {
+    position: absolute;
+    top: -1100px;
+    right: -1100px;
+    width: 100%;
+    animation: rotateAnimation 30s linear infinite;
 }
 
 /* 向下探索的闪动按钮 */
@@ -181,11 +190,9 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-}
-
-#down-wrap:hover {
     animation: blink 3s infinite;
 }
+
 
 .page-scroll {
     font-size: 20px;
@@ -472,7 +479,6 @@ section {
     flex-direction: row
 }
 
-/* 仰望星空，共托情思 */
 .emotion-wrap {
     margin-left: 50%;
     transform: translateX(-50%);

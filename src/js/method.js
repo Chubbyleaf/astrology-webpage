@@ -1,5 +1,3 @@
-// 仰望星空，共托情思的图
-
 //中间饼状图的数据
 const centerPieData = [
     { value: 590, name: '星为代语' },
