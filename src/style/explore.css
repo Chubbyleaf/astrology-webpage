@@ -208,8 +208,17 @@
 
 
  /* 星星特效 */
+
+ .hidden-star {
+     opacity: 0.05;
+ }
+
+ .highlight-star {
+     opacity: 1;
+ }
+
  .star-animation {
-     opacity: 0;
+     opacity: 1;
      transform: scale(1);
      transition: transform 2s ease, opacity 2s ease;
      animation: blink 5s infinite;
@@ -289,12 +298,11 @@
 
      0%,
      100% {
-         opacity: 0.2;
-         /* Start and end with opacity 0 */
+         opacity: 0;
      }
 
      50% {
-         opacity: 1;
+         opacity: 0.5;
          /* Midway, opacity 1 */
      }
  }
