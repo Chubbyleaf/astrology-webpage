@@ -5,6 +5,8 @@ var myChart = echarts.init(dom, null, {
     useDirtyRect: false
 });
 
+var tmpNode = '';
+
 // 设置节点labels
 sankeyData.nodes.forEach(node => {
     node.label = {
@@ -21,7 +23,7 @@ sankeyData.nodes.forEach(node => {
 
     // 根据节点的y值判断是否使用本地图片
     if (node.y === 450) {
-        node.symbol = `image://src/svg/sankey-icons/${node.name}.svg`,
+        node.symbol = `image://src/svg/sankey-icons/${node.name}.svg`
         node.symbolSize = [30, 30]; // 设置图片的大小
         node.itemStyle = {
             color: "#202020",
@@ -51,14 +53,84 @@ sankeyData.links.forEach(link => {
 });
 
 
+myChart.on('click', function (params) {
+    if (params.dataType === 'node') {
+        const dataName = params.data.name;
+        if (tmpNode === dataName) {
+            tmpNode = ''
+            // 设置连接线颜色与源节点一样
+            sankeyData.links.forEach(link => {
+                const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+                const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+                link.lineStyle = {
+                    color: sourceColor,
+                    opacity: sourceColor === 'white' ? 0.05 : 0.3,
+                    width: 1,
+                };
+            });
+            myChart.setOption({
+                series: [{
+                    nodes: sankeyData.nodes,
+                    links: sankeyData.links
+                }]
+            });
+        } else {
+            tmpNode = dataName
+            sankeyData.links.forEach(link => {
+                const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+                const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+                link.lineStyle = {
+                    opacity: link.source === tmpNode || link.target === tmpNode ? 0.6 : 0.05,
+                    width: link.source === tmpNode || link.target === tmpNode ? 1.5 : 0.5,
+                    color: sourceColor
+                };
+            });
+            myChart.setOption({
+                series: [{
+                    nodes: sankeyData.nodes,
+                    links: sankeyData.links
+                }]
+            });
+        }
+
+    }
+});
+
 
 myChart.on('mouseover', function (params) {
     if (params.dataType === 'node') {
         const dataName = params.data.name;
-        const linksData = sankeyData.links.filter(link => link.source === dataName || link.target === dataName);
-        linksData.forEach(link => {
-            link.lineStyle.opacity = 0.6;
-            link.lineStyle.width = 1.5
+        if (tmpNode === '') {
+            sankeyData.links.forEach(link => {
+                const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+                const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+                link.lineStyle = {
+                    opacity: link.source === dataName || link.target === dataName ? 0.6 : 0.05,
+                    width: link.source === dataName || link.target === dataName ? 1.5 : 1,
+                    color: sourceColor
+                };
+            });
+            myChart.setOption({
+                series: [{
+                    links: sankeyData.links
+                }]
+            });
+        }
+
+    }
+});
+
+// Add event listener for mouseout event
+myChart.on('mouseout', function () {
+    if (tmpNode == '') {
+        sankeyData.links.forEach(link => {
+            const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
+            const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
+            link.lineStyle = {
+                color: sourceColor,
+                opacity: sourceColor === 'white' ? 0.05 : 0.3,
+                width: 1,
+            };
         });
         myChart.setOption({
             series: [{
@@ -66,25 +138,7 @@ myChart.on('mouseover', function (params) {
             }]
         });
     }
-});
 
-// Add event listener for mouseout event
-myChart.on('mouseout', function () {
-    sankeyData.links.forEach(link => {
-        const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
-        const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
-
-        link.lineStyle = {
-            color: sourceColor,
-            opacity: sourceColor === 'white' ? 0.05 : 0.3,
-            width: 1,
-        };
-    });
-    myChart.setOption({
-        series: [{
-            links: sankeyData.links
-        }]
-    });
 });
 
 
@@ -123,13 +177,13 @@ option = {
             itemStyle: {
                 color: "white",
             },
-            emphasis: {
-                focus: 'adjacency',
+            selectedMode: true,
+            selected: {
                 lineStyle: {
                     opacity: 1,
                     width: 1.5,
                 },
-            }
+            },
         }
     ]
 };

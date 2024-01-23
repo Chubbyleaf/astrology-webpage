@@ -88,8 +88,6 @@ function getEncodeSvg(poetry) {
 function getSimpleEncodeSvg(poetry) {
     encodeStarElementList = []
     drawEmotionSvg(poetry)
-    // drawGenreSvg(poetry)
-    // drawMethodSvg(poetry)
     drawStarNameSvg(poetry)
     // 创建SVG元素
     var svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -288,7 +286,7 @@ function drawNPointStar(cx, cy, radius, n) {
         const y = cy + radius * Math.sin(angle);
         points += `${x},${y} `;
         i++;
-        const innerRadius = radius / 5;
+        const innerRadius = radius / 6;
         const innerX = cx + innerRadius * Math.cos(angle + Math.PI / n);
         const innerY = cy + innerRadius * Math.sin(angle + Math.PI / n);
         points += `${innerX},${innerY} `;
@@ -305,7 +303,7 @@ function drawFivePointStar(cx, cy, radius) {
         const x = cx + radius * Math.cos(angle);
         const y = cy + radius * Math.sin(angle);
         points.push(`${x},${y}`);
-        const innerRadius = radius / 5;
+        const innerRadius = radius / 6;
         const innerX = cx + innerRadius * Math.cos(angle + Math.PI / 5);
         const innerY = cy + innerRadius * Math.sin(angle + Math.PI / 5);
         points.push(`${innerX},${innerY}`);
@@ -319,7 +317,7 @@ function drawSevenPointStar(cx, cy, radius) {
     const points = [];
     for (let i = 0; i < 14; i++) {
         const angle = (i * Math.PI) / 7 - Math.PI / 2;
-        const r = i % 2 === 0 ? radius : radius / 5;
+        const r = i % 2 === 0 ? radius : radius / 6;
         const x = cx + r * Math.cos(angle);
         const y = cy + r * Math.sin(angle);
         points.push(`${x},${y}`);
@@ -513,7 +511,15 @@ async function createStars(starList) {
             void star.offsetWidth;
             svg.style.opacity = 1;
 
-            const starSize = Math.floor(Math.random() * (50 - 25 + 1)) + 5;
+            const sentenceNum = poetry.sentenceNum;
+            let starSize;
+            if (sentenceNum >= 0 && sentenceNum <= 4) {
+                starSize = 10;
+            } else if (sentenceNum > 4 && sentenceNum <= 8) {
+                starSize = 20;
+            } else {
+                starSize = 30;
+            }
             svg.style.width = `${starSize}px`;
             svg.style.height = `${starSize}px`;
 

@@ -298,7 +298,6 @@ function drawRoseChart() {
                         color: "#fff",
                         opacity: 1,
                         formatter: function (params) {
-                            console.log(params)
                             return ` ${params.name}\n\n${params.data.proportion}`;
                         }
                     },
