@@ -511,9 +511,10 @@ section {
     height: 300px;
     width: 800px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 298px;
+    left: 748px;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 /* 结尾的诗词介绍 */
@@ -604,18 +605,21 @@ section {
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
     animation: pulse 3s infinite;
-    z-index: 10;
+    z-index: 100;
 }
 
 #explore-warp {
     height: 100vh;
 }
 
-#tail-bg {
-    width: 100%;
-    z-index: -1;
-    margin-top: -250vh;
-    opacity: 0.8;
+
+#chapter04 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../image/tail-bg.png');
+    background-size:cover;
+    background-position: center;
 }
 
 #animation-div {

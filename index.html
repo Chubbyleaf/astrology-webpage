@@ -41,7 +41,7 @@
     <div class="cover">
       <img id="cover-title-img" src="./src/svg/cover/title.svg" alt="title" />
       <div id="cover-subtitle-div">解读唐诗中的星象密码</div>
-      <img id="cover-bg1" src="./src/svg/cover/bg.svg" alt="background"/>
+      <img id="cover-bg1" src="./src/svg/cover/bg.svg" alt="background" />
       <img id="cover-bg2" src="./src/svg/cover/ring.svg" alt="background" />
       <img id="cover-bg3" src="./src/svg/cover/inside-stars.svg" alt="background" />
       <img id="cover-bg4" src="./src/svg/cover/outside-stars.svg" alt="background" />
@@ -156,8 +156,15 @@
     <div class="horizontal-layout" id="method-chart-warp"
       style="width: 100%;position:relative;height: 600px;margin-top: -50px;">
       <div id="Center-Pie-Chart"></div>
-      <div id="Side-Pie-Chart" style="height: 167px;width: 167px;"></div>
-      <div id="pie-pie-line"></div>
+      <div id="Side-Pie-Chart1" style="height: 167px;width: 167px;z-index: 10;opacity: 0.3;"></div>
+      <div id="Side-Pie-Chart2" style="height: 167px;width: 167px;z-index: 10;opacity: 0.3;"></div>
+      <div id="Side-Pie-Chart3" style="height: 167px;width: 167px;z-index: 10;opacity: 0.3;"></div>
+      <div id="Side-Pie-Chart4" style="height: 167px;width: 167px;z-index: 10;opacity: 0.3;"></div>
+
+      <div id="pie-pie-line1" style="opacity: 0.3;"></div>
+      <div id="pie-pie-line2" style="opacity: 0.3;"></div>
+      <div id="pie-pie-line3" style="opacity: 0.3;"></div>
+      <div id="pie-pie-line4" style="opacity: 0.3;"></div>
     </div>
     <div class="bottom-chart-name">图 星象与入诗手法</div>
 
@@ -206,7 +213,7 @@
     </div>
 
     <div class="vertical-layout">
-      <img id="star-illustration" src="./src/svg/illustration.svg" alt="illustration" />
+      <img id="star-illustration" src="./src/svg/illustration.svg" style="width: 70%;" alt="illustration" />
     </div>
 
     <div id="poem-overall-wrap" class="vertical-layout">
@@ -267,7 +274,6 @@
         <a href="explore.html" class="animated-button">开始探索星空</a>
       </div>
     </div>
-    <!-- <img src="./src/image/tail-bg.png" alt="tail-bg" id="tail-bg" /> -->
   </section>
 
 
