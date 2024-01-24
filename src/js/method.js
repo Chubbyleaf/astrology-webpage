@@ -160,22 +160,18 @@ function drawSidePieChart(chartName) {
     var dom;
     if (chartName == '星为主题') {
         dom = document.getElementById('Side-Pie-Chart1');
-        dom.style.position = 'absolute'
         dom.style.top = '287px';
         dom.style.left = '270px';
     } else if (chartName == '星为元素') {
         dom = document.getElementById('Side-Pie-Chart2');
-        dom.style.position = 'absolute'
         dom.style.top = '166px';
-        dom.style.right = '333px';
+        dom.style.left = '995px';
     } else if (chartName == '星为代语') {
         dom = document.getElementById('Side-Pie-Chart3');
-        dom.style.position = 'absolute'
         dom.style.top = '-25px';
         dom.style.left = '518px';
     } else if (chartName == '星为原型意象') {
         dom = document.getElementById('Side-Pie-Chart4');
-        dom.style.position = 'absolute'
         dom.style.top = '458px';
         dom.style.left = '464px';
     }
@@ -229,28 +225,24 @@ async function drawVector(chartName) {
     var src;
     if (chartName == '星为主题') {
         piePieLine = document.getElementById('pie-pie-line1');
-        piePieLine.style.position = 'absolute'
         piePieLine.style.zIndex = -1
         src = './src/svg/vector4.svg'
         piePieLine.style.top = '275px';
         piePieLine.style.left = '340px';
     } else if (chartName == '星为元素') {
         piePieLine = document.getElementById('pie-pie-line2');
-        piePieLine.style.position = 'absolute'
         piePieLine.style.zIndex = -1
         src = './src/svg/vector2.svg'
         piePieLine.style.top = '174px';
-        piePieLine.style.right = '400px';
+        piePieLine.style.left = '785px';
     } else if (chartName == '星为代语') {
         piePieLine = document.getElementById('pie-pie-line3');
-        piePieLine.style.position = 'absolute'
         piePieLine.style.zIndex = -1
         src = './src/svg/vector1.svg'
         piePieLine.style.top = '33px';
         piePieLine.style.left = '532px';
     } else if (chartName == '星为原型意象') {
         piePieLine = document.getElementById('pie-pie-line4');
-        piePieLine.style.position = 'absolute'
         piePieLine.style.zIndex = -1
         src = './src/svg/vector3.svg'
         piePieLine.style.top = '375px';

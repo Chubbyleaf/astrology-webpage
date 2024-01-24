@@ -1,42 +1,9 @@
 // 玫瑰图数据
 const roseData = [
     {
-        "name": "其他",
-        "value": 264,
-        "proportion": "10.74%"
-    },
-
-    {
-        "name": "羁旅思乡",
-        "value": 81,
-        "proportion": "3.3%"
-    },
-
-    {
-        "name": "咏史怀古",
-        "value": 203,
-        "proportion": "8.26%"
-    },
-    {
-        "name": "送别怀人",
-        "value": 264,
-        "proportion": "10.74%"
-    },
-    {
-        "name": "山水田园",
-        "value": 191,
-        "proportion": "7.77%"
-    },
-    {
-        "name": "爱情闺怨",
-        "value": 62,
-        "proportion": "2.52%"
-    },
-
-    {
-        "name": "咏物言志",
-        "value": 164,
-        "proportion": "6.67%"
+        "name": "感怀诗",
+        "value": 554,
+        "proportion": "22.55%"
     },
     {
         "name": "哲理诗",
@@ -44,203 +11,233 @@ const roseData = [
         "proportion": "12.25%"
     },
     {
-        "name": "边塞军旅",
-        "value": 92,
-        "proportion": "3.74%"
-    },
-    {
         "name": "赞颂诗",
         "value": 281,
         "proportion": "11.44%"
     },
     {
-        "name": "感怀诗",
-        "value": 554,
-        "proportion": "22.55%"
+        "name": "其他",
+        "value": 264,
+        "proportion": "10.74%"
     },
+    {
+        "name": "送别怀人",
+        "value": 264,
+        "proportion": "10.74%"
+    },
+    {
+        "name": "咏史怀古",
+        "value": 203,
+        "proportion": "8.26%"
+    },
+    {
+        "name": "山水田园",
+        "value": 191,
+        "proportion": "7.77%"
+    },
+    {
+        "name": "咏物言志",
+        "value": 164,
+        "proportion": "6.67%"
+    },
+    {
+        "name": "边塞军旅",
+        "value": 92,
+        "proportion": "3.74%"
+    },
+    {
+        "name": "羁旅思乡",
+        "value": 81,
+        "proportion": "3.3%"
+    },
+    {
+        "name": "爱情闺怨",
+        "value": 62,
+        "proportion": "2.52%"
+    }
 ]
 
 //象形柱状图数据
 const pbData = {
     "感怀诗": {
-      "starList": [
-        "火星",
-        "太微",
-        "觜宿",
-        "土星",
-        "水星"
-      ],
-      "valueList": [
-        0.4,
-        0.3438,
-        0.3333,
-        0.3333,
-        0.3108
-      ]
+        "starList": [
+            "火星",
+            "太微",
+            "觜宿",
+            "土星",
+            "水星"
+        ],
+        "valueList": [
+            0.4,
+            0.3438,
+            0.3333,
+            0.3333,
+            0.3108
+        ]
     },
     "山水田园": {
-      "starList": [
-        "胃宿",
-        "角宿",
-        "虚宿",
-        "毕宿",
-        "井宿"
-      ],
-      "valueList": [
-        0.2603,
-        0.1965,
-        0.1818,
-        0.175,
-        0.1163
-      ]
+        "starList": [
+            "胃宿",
+            "角宿",
+            "虚宿",
+            "毕宿",
+            "井宿"
+        ],
+        "valueList": [
+            0.2603,
+            0.1965,
+            0.1818,
+            0.175,
+            0.1163
+        ]
     },
     "送别怀人": {
-      "starList": [
-        "柳宿",
-        "娄宿",
-        "胃宿",
-        "亢宿",
-        "氐宿"
-      ],
-      "valueList": [
-        0.375,
-        0.25,
-        0.2329,
-        0.2143,
-        0.1806
-      ]
+        "starList": [
+            "柳宿",
+            "娄宿",
+            "胃宿",
+            "亢宿",
+            "氐宿"
+        ],
+        "valueList": [
+            0.375,
+            0.25,
+            0.2329,
+            0.2143,
+            0.1806
+        ]
     },
     "赞颂诗": {
-      "starList": [
-        "张宿",
-        "尾宿",
-        "房宿",
-        "箕宿",
-        "心宿"
-      ],
-      "valueList": [
-        0.6,
-        0.2323,
-        0.2286,
-        0.2258,
-        0.2258
-      ]
+        "starList": [
+            "张宿",
+            "尾宿",
+            "房宿",
+            "箕宿",
+            "心宿"
+        ],
+        "valueList": [
+            0.6,
+            0.2323,
+            0.2286,
+            0.2258,
+            0.2258
+        ]
     },
     "哲理诗": {
-      "starList": [
-        "土星",
-        "室宿",
-        "壁宿",
-        "星宿",
-        "心宿"
-      ],
-      "valueList": [
-        0.6667,
-        0.2571,
-        0.2222,
-        0.2131,
-        0.1935
-      ]
+        "starList": [
+            "土星",
+            "室宿",
+            "壁宿",
+            "星宿",
+            "心宿"
+        ],
+        "valueList": [
+            0.6667,
+            0.2571,
+            0.2222,
+            0.2131,
+            0.1935
+        ]
     },
     "其他": {
-      "starList": [
-        "娄宿",
-        "觜宿",
-        "危宿",
-        "虚宿",
-        "壁宿"
-      ],
-      "valueList": [
-        0.75,
-        0.6667,
-        0.6,
-        0.3636,
-        0.3333
-      ]
+        "starList": [
+            "娄宿",
+            "觜宿",
+            "危宿",
+            "虚宿",
+            "壁宿"
+        ],
+        "valueList": [
+            0.75,
+            0.6667,
+            0.6,
+            0.3636,
+            0.3333
+        ]
     },
     "咏物言志": {
-      "starList": [
-        "房宿",
-        "参宿",
-        "斗宿",
-        "箕宿",
-        "尾宿"
-      ],
-      "valueList": [
-        0.2286,
-        0.1111,
-        0.1061,
-        0.0968,
-        0.0909
-      ]
+        "starList": [
+            "房宿",
+            "参宿",
+            "斗宿",
+            "箕宿",
+            "尾宿"
+        ],
+        "valueList": [
+            0.2286,
+            0.1111,
+            0.1061,
+            0.0968,
+            0.0909
+        ]
     },
     "咏史怀古": {
-      "starList": [
-        "金星",
-        "水星",
-        "毕宿",
-        "壁宿",
-        "斗宿"
-      ],
-      "valueList": [
-        0.1517,
-        0.1486,
-        0.1125,
-        0.1111,
-        0.1061
-      ]
+        "starList": [
+            "金星",
+            "水星",
+            "毕宿",
+            "壁宿",
+            "斗宿"
+        ],
+        "valueList": [
+            0.1517,
+            0.1486,
+            0.1125,
+            0.1111,
+            0.1061
+        ]
     },
     "羁旅思乡": {
-      "starList": [
-        "箕宿",
-        "亢宿",
-        "尾宿",
-        "翼宿",
-        "天市"
-      ],
-      "valueList": [
-        0.0968,
-        0.0952,
-        0.0909,
-        0.0909,
-        0.0789
-      ]
+        "starList": [
+            "箕宿",
+            "亢宿",
+            "尾宿",
+            "翼宿",
+            "天市"
+        ],
+        "valueList": [
+            0.0968,
+            0.0952,
+            0.0909,
+            0.0909,
+            0.0789
+        ]
     },
     "爱情闺怨": {
-      "starList": [
-        "女宿",
-        "牛宿",
-        "轸宿",
-        "参宿",
-        "太微"
-      ],
-      "valueList": [
-        0.2381,
-        0.157,
-        0.1,
-        0.0833,
-        0.0312
-      ]
+        "starList": [
+            "女宿",
+            "牛宿",
+            "轸宿",
+            "参宿",
+            "太微"
+        ],
+        "valueList": [
+            0.2381,
+            0.157,
+            0.1,
+            0.0833,
+            0.0312
+        ]
     },
     "边塞军旅": {
-      "starList": [
-        "昴宿",
-        "轸宿",
-        "鬼宿",
-        "壁宿",
-        "火星"
-      ],
-      "valueList": [
-        0.1585,
-        0.15,
-        0.1139,
-        0.1111,
-        0.1
-      ]
+        "starList": [
+            "昴宿",
+            "轸宿",
+            "鬼宿",
+            "壁宿",
+            "火星"
+        ],
+        "valueList": [
+            0.1585,
+            0.15,
+            0.1139,
+            0.1111,
+            0.1
+        ]
     }
-  }
+}
 
-var selectedTheme = '咏史怀古'
+var selectedTheme = '感怀诗'
 
 //绘制玫瑰图
 function drawRoseChart() {
@@ -267,6 +264,7 @@ function drawRoseChart() {
             trigger: 'item',
         },
         series: [
+
             {
                 name: '诗的题材',
                 type: 'pie',
@@ -321,7 +319,7 @@ function drawRoseChart() {
     myChart.on('click', function (params) {
         var name = params.name;
         selectedTheme = name;
-        myChart.dispatchAction({ type: "downplay", seriesIndex: 0, dataIndex: 2 });
+        myChart.dispatchAction({ type: "downplay", seriesIndex: 0, dataIndex: 0 });
         drawPBChart()
     });
 
@@ -329,7 +327,7 @@ function drawRoseChart() {
     if (option && typeof option === 'object') {
         myChart.setOption(option);
     }
-    myChart.dispatchAction({ type: "select", seriesIndex: 0, dataIndex: 2 }); //设置默认选中高亮部分
+    myChart.dispatchAction({ type: "select", seriesIndex: 0, dataIndex: 0 }); //设置默认选中高亮部分
     window.addEventListener('resize', myChart.resize);
 }
 
