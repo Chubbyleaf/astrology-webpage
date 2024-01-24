@@ -67,7 +67,7 @@ myChart.on('click', function (params) {
                     opacity: sourceColor === 'white' ? 0.05 : 0.3,
                     width: 1,
                 };
-                link.label = { show: false};
+                // link.label = { show: false};
             });
             myChart.setOption({
                 series: [{
@@ -85,16 +85,16 @@ myChart.on('click', function (params) {
                     width: link.source === tmpNode || link.target === tmpNode ? 1 : 0.5,
                     color: sourceColor
                 };
-                link.label = { // 显示高亮连线的 label
-                    show: link.source === tmpNode || link.target === tmpNode,
-                    position: "start" ,
-                    formatter: function (params) {
-                        return `${params.data.value}`;
-                    },
-                    fontFamily: "SongTi-regular",
-                    color: "#fff",
-                    fontSize: 12
-                };
+                // link.label = { // 显示高亮连线的 label
+                //     show: link.source === tmpNode || link.target === tmpNode,
+                //     position: "start" ,
+                //     formatter: function (params) {
+                //         return `${params.data.value}`;
+                //     },
+                //     fontFamily: "SongTi-regular",
+                //     color: "#fff",
+                //     fontSize: 12
+                // };
             });
             myChart.setOption({
                 series: [{

@@ -205,7 +205,7 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    animation: blink 3s infinite;
+    animation: blink 4s infinite;
 }
 
 
