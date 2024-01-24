@@ -77,7 +77,8 @@ myChart.on('click', function (params) {
             });
         } else {
             tmpNode = dataName
-            sankeyData.links.forEach(link => {
+            const filteredLinks = sankeyData.links.filter(link => link.source === dataName || link.target === dataName);
+            filteredLinks.forEach(link => {
                 const sourceNode = sankeyData.nodes.find(node => node.name === link.source);
                 const sourceColor = sourceNode.itemStyle ? sourceNode.itemStyle.color : 'white';
                 link.lineStyle = {
@@ -85,21 +86,11 @@ myChart.on('click', function (params) {
                     width: link.source === tmpNode || link.target === tmpNode ? 1 : 0.5,
                     color: sourceColor
                 };
-                // link.label = { // 显示高亮连线的 label
-                //     show: link.source === tmpNode || link.target === tmpNode,
-                //     position: "start" ,
-                //     formatter: function (params) {
-                //         return `${params.data.value}`;
-                //     },
-                //     fontFamily: "SongTi-regular",
-                //     color: "#fff",
-                //     fontSize: 12
-                // };
             });
             myChart.setOption({
                 series: [{
                     nodes: sankeyData.nodes,
-                    links: sankeyData.links
+                    links: filteredLinks
                 }]
             });
         }
@@ -126,8 +117,7 @@ myChart.on('mouseover', function (params) {
                 }]
             });
         }
-
-    }
+    } 
 });
 
 // Add event listener for mouseout event
@@ -149,6 +139,8 @@ myChart.on('mouseout', function () {
         });
     }
 
+    var linkInfoDiv = document.getElementById('linkInfo');
+    linkInfoDiv.style.display = 'none';
 });
 
 
