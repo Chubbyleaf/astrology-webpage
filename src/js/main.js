@@ -19,6 +19,12 @@ window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     const header = document.querySelector('header');
     const section = document.getElementById('chapter01');
+    var popup = document.getElementById("reference-popup");
+  
+    // 如果弹窗已经显示，则重新计算其位置
+    if (popup.style.display === "block") {
+      fixPopupPosition();
+    }
 
     if (window.scrollY >= section.offsetTop) {
         navbar.style.display = 'block';
@@ -73,6 +79,37 @@ function toggleMenu() {
     }
 }
 
+//显示参考文献
+function togglePopup(){
+    var popup = document.getElementById("reference-popup");
+    var overlay = document.getElementById("overlay");
+    
+    // 切换弹窗和背景遮罩的显示状态
+    if (popup.style.display === "block") {
+      popup.style.display = "none";
+      overlay.style.display = "none";
+    } else {
+      popup.style.display = "block";
+      overlay.style.display = "block";
+    }
+
+    // 显示弹窗时，固定其位置
+    fixPopupPosition();
+}
+
+// 固定弹窗的位置
+function fixPopupPosition() {
+    var popup = document.getElementById("popup");
+    
+    // 计算弹窗的位置
+    var windowHeight = window.innerHeight;
+    var popupHeight = popup.offsetHeight;
+    var topPosition = (windowHeight - popupHeight) / 2;
+    
+    // 设置弹窗的位置
+    popup.style.top = topPosition + "px";
+  }
+  
 
 // 添加点击事件监听器到 document
 document.addEventListener('click', function (event) {

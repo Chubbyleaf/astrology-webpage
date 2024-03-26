@@ -27,8 +27,26 @@
     <a href="#chapter02" class="page-scroll" id="menu02">第二章<br />辰星入诗，共托情思</a>
     <a href="#chapter03" class="page-scroll" id="menu03">第三章<br />以人为镜，仰望诗星</a>
     <a href="#chapter04" class="page-scroll" id="menu04">第四章<br />星空探索</a>
-
+    <div onclick="togglePopup()">Dataset/References</div>
   </div>
+
+  <div id="reference-popup">
+    <div style="width: 100%;text-align: right;">
+      <div onclick="togglePopup()" id="popup-close-btn">×</div>
+      <div id="reference-container">
+        <div class="title">数据库 Dataset:</div>
+        <div class="info"> https://github.com/xiu-ze/Poetry</div>
+        <div class="title">参考文献 Reference:</div>
+        <div class="info">[1]王政.星象文化与唐诗[D].辽宁大学,2014.</div>
+        <div class="info">[2]邱建国.略论古典诗词中的星象观[J].宝鸡文理学院学报(哲学社会科学版),1995.</div>
+        <div class="info">[3]王磊.论唐诗创作中的日月星辰意象[D].河北师范大学,2012.</div>
+        <div class="info">[4]朱习文.古天文词汇研究[D].浙江大学,2005.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
   <header>
     <div class="cover">
       <img id="cover-title-img" src="./src/svg/cover/title.svg" alt="title" />
@@ -43,6 +61,10 @@
         <img id="down-arrow" src="./src/image/down-arrow.png" alt="down-arrow" />
         <div id="down-text">开始探索</div>
       </a>
+      <div id="recommend-text">
+        *推荐使用Chrome浏览器。<br />
+        *Chrome is recommended as the browser
+      </div>
     </div>
   </header>
 
@@ -266,6 +288,7 @@
       <div style="margin-top: 50px;">
         <a href="explore.html" class="animated-button">开始探索星空</a>
       </div>
+      <div onclick="togglePopup()" class="dataset-btn">Dataset/References</div>
     </div>
   </section>
 
